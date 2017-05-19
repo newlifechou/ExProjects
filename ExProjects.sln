@@ -10,8 +10,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "二维码", "二维码", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{D917AF87-7686-476A-B73A-C3A3BF8B4D8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThoughtWorksQRCodeExample", "ThoughtWorksQRCodeExample\ThoughtWorksQRCodeExample.csproj", "{A2936A86-E7A2-4CE8-AE71-01D4DE23135A}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2936A86-E7A2-4CE8-AE71-01D4DE23135A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2936A86-E7A2-4CE8-AE71-01D4DE23135A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2936A86-E7A2-4CE8-AE71-01D4DE23135A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2936A86-E7A2-4CE8-AE71-01D4DE23135A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A2936A86-E7A2-4CE8-AE71-01D4DE23135A} = {C4E4265F-0A7C-4CAB-9E76-6C02603A2495}
 	EndGlobalSection
 EndGlobal
