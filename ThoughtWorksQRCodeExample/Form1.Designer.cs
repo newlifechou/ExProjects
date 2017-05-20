@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(837, 638);
             this.Controls.Add(this.picBox);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "ThoughtWorkQRCodeExample";
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.ResumeLayout(false);
 
