@@ -1,4 +1,4 @@
-//使用随机数
+#使用随机数
 import random
 random.seed(10)
 item=[1,2,3,4,5,6,7]
