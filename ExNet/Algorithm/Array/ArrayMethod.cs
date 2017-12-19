@@ -129,7 +129,23 @@ namespace Algorithm.Array
             return b;
         }
 
-
+        public int[] Process(int[] a, int m)
+        {
+            int[] b = new int[m];
+            for (int i = 0; i < b.Length; i++)
+            {
+                int count = 0;
+                for (int j = 0; j < a.Length; j++)
+                {
+                    if (i == a[j])
+                    {
+                        count++;
+                    }
+                }
+                b[i] = count;
+            }
+            return b;
+        }
 
 
 
