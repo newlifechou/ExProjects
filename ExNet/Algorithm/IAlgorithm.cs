@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Algorithm
 {
-    class Program
+    public interface IAlgorithm
     {
-        static void Main(string[] args)
-        {
-
-        }
+        void Run();
     }
 }
