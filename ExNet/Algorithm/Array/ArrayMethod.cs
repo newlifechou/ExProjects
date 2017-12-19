@@ -109,7 +109,25 @@ namespace Algorithm.Array
             }
         }
 
-
+        /// <summary>
+        /// Rotate  Matrix
+        /// </summary>
+        /// <param name="a"></param>
+        /// <returns></returns>
+        public int[,] Rotate(int[,] a)
+        {
+            int m = a.GetLength(0);
+            int n = a.GetLength(1);
+            int[,] b = new int[m, n];
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    b[j, i] = a[i, j];
+                }
+            }
+            return b;
+        }
 
 
 
