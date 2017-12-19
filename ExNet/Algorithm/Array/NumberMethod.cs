@@ -53,7 +53,21 @@ namespace Algorithm.Array
             throw new NotImplementedException();
         }
 
-
+        public int lg(int n)
+        {
+            int m = 1;
+            int ss = 1;
+            while (m<n)
+            {
+                ss *= 2;
+                if (ss>=n)
+                {
+                    break;
+                }
+                m++;
+            }
+            return m-1;
+        }
 
 
 
