@@ -46,5 +46,13 @@ namespace Algorithm.Array.Tests
             NumberMethod test = new NumberMethod();
             Assert.IsFalse(test.ThreeEqual(a, b, c));
         }
+
+        [TestMethod()]
+        public void BetweenZeroAndOneTest()
+        {
+            double a = 0.5, b = 0.6;
+            NumberMethod test = new NumberMethod();
+            Assert.IsTrue(test.BetweenZeroAndOne(a, b));
+        }
     }
 }

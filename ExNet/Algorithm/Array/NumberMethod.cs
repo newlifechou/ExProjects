@@ -12,5 +12,9 @@ namespace Algorithm.Array
         {
             return a == b && b == c;
         }
+        public bool BetweenZeroAndOne(double a, double b)
+        {
+            return a > 0 && a < 1 && b > 0 && b < 1;
+        }
     }
 }
