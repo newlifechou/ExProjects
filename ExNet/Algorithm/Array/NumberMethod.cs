@@ -17,16 +17,41 @@ namespace Algorithm.Array
             return a > 0 && a < 1 && b > 0 && b < 1;
         }
 
-        public string ToBinary(int a)
+        public string TenToBinary(int a)
         {
             string s = "";
-            for(int n = a; n > 0; n /= 2)
+            for (int n = a; n > 0; n /= 2)
             {
                 s = (n % 2) + s;
             }
             return s;
         }
+        //TODO:后续实现10到8，10到16，2到10，8到10，16到10
 
+        public string TenToOct(int a)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string TenToHex(int a)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int BinaryToTen(string a)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int OctToTen(string a)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int HexToTen(string a)
+        {
+            throw new NotImplementedException();
+        }
 
 
     }

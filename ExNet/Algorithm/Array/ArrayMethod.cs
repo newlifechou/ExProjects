@@ -52,7 +52,7 @@ namespace Algorithm.Array
             }
         }
 
-        public void Matrix(int[][] a,int[][] b)
+        public void Matrix(int[][] a, int[][] b)
         {
 
         }
@@ -62,14 +62,14 @@ namespace Algorithm.Array
         /// <param name="key"></param>
         /// <param name="a">数组必须有序</param>
         /// <returns></returns>
-        public int Rank(int key,int[] a)
+        public int Rank(int key, int[] a)
         {
             int lo = 0;
             int hi = a.Length - 1;
-            while (lo<=hi)
+            while (lo <= hi)
             {
                 int mid = lo + (hi - lo) / 2;
-                if (key<a[mid])
+                if (key < a[mid])
                 {
                     hi = mid - 1;
                 }
@@ -85,8 +85,29 @@ namespace Algorithm.Array
             return -1;
         }
 
-
-
+        /// <summary>
+        /// Print bool value
+        /// </summary>
+        /// <param name="data"></param>
+        public void PrintBoolean(bool[,] data)
+        {
+            for (int i = 0; i < data.GetLength(0); i++)
+            {
+                for (int j = 0; j < data.GetLength(1).; j++)
+                {
+                    Console.Write(i + "," + j);
+                    if (data[i, j] == true)
+                    {
+                        Console.Write("*");
+                    }
+                    else
+                    {
+                        Console.Write("#");
+                    }
+                    Console.WriteLine();
+                }
+            }
+        }
 
 
 

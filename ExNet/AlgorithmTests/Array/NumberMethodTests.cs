@@ -60,15 +60,18 @@ namespace Algorithm.Array.Tests
         {
             int a = 6;
             NumberMethod test = new NumberMethod();
-            Assert.AreEqual("110", test.ToBinary(a));
+            Assert.AreEqual("110", test.TenToBinary(a));
         }
         [TestMethod()]
         public void ToBinaryTest2()
         {
             int a = 7;
             NumberMethod test = new NumberMethod();
-            Assert.AreEqual("111", test.ToBinary(a));
+            Assert.AreEqual("111", test.TenToBinary(a));
         }
+
+
+
 
     }
 }
