@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Array\ArrayMethod.cs" />
     <Compile Include="Array\NumberMethod.cs" />
+    <Compile Include="Array\StringMethod.cs" />
     <Compile Include="IAlgorithm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
