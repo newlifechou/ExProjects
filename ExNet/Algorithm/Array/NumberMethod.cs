@@ -16,5 +16,18 @@ namespace Algorithm.Array
         {
             return a > 0 && a < 1 && b > 0 && b < 1;
         }
+
+        public string ToBinary(int a)
+        {
+            string s = "";
+            for(int n = a; n > 0; n /= 2)
+            {
+                s = (n % 2) + s;
+            }
+            return s;
+        }
+
+
+
     }
 }

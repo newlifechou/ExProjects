@@ -54,5 +54,21 @@ namespace Algorithm.Array.Tests
             NumberMethod test = new NumberMethod();
             Assert.IsTrue(test.BetweenZeroAndOne(a, b));
         }
+
+        [TestMethod()]
+        public void ToBinaryTest()
+        {
+            int a = 6;
+            NumberMethod test = new NumberMethod();
+            Assert.AreEqual("110", test.ToBinary(a));
+        }
+        [TestMethod()]
+        public void ToBinaryTest2()
+        {
+            int a = 7;
+            NumberMethod test = new NumberMethod();
+            Assert.AreEqual("111", test.ToBinary(a));
+        }
+
     }
 }
