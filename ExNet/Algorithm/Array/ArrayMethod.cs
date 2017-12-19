@@ -41,7 +41,21 @@ namespace Algorithm.Array
             return another;
         }
 
+        public void Reverse(int[] data)
+        {
+            int n = data.Length;
+            for (int i = 0; i < n / 2; i++)
+            {
+                int temp = data[i];
+                data[i] = data[n - 1 - i];
+                data[n - 1 - i] = temp;
+            }
+        }
 
+        public void Matrix(int[][] a,int[][] b)
+        {
+
+        }
 
     }
 }
