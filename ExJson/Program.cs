@@ -14,6 +14,9 @@ namespace ExJson
             js.DataSerializeJson();
             js.DataSerializeXML();
             js.JavaScriptJsonSerializer();
+            js.JsonNet();
+
+
 
             Console.Read();
         }

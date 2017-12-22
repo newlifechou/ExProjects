@@ -8,8 +8,7 @@ using System.Runtime.Serialization.Json;
 using System.IO;
 
 using System.Web.Script.Serialization;
-
-
+using Newtonsoft.Json;
 
 namespace ExJson
 {
@@ -18,8 +17,15 @@ namespace ExJson
         public JsonString()
         {
             p = new Person { Name = "Jack Paul", Score = 95 };
+            ps = new List<Person>()
+            {
+                new Person {Name="Lucy",Score=100 },
+                new Person {Name="Peter",Score=98 }
+            };
         }
         private Person p;
+
+        private List<Person> ps;
         public void DataSerializeXML()
         {
             DataContractSerializer dcs = new DataContractSerializer(typeof(Person));
@@ -70,5 +76,25 @@ namespace ExJson
 
 
         }
+
+
+        public void JsonNet()
+        {
+
+            string jsonData = JsonConvert.SerializeObject(ps);
+            Console.WriteLine(jsonData);
+
+            //De
+
+            List<Person> pps = JsonConvert.DeserializeObject<List<Person>>(jsonData);
+            Console.WriteLine(pps[0].Name);
+            Console.WriteLine(pps[1].Name);
+        }
+
+
+
+
+
+
     }
 }
