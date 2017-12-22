@@ -10,6 +10,10 @@ namespace ExJson
     {
         static void Main(string[] args)
         {
+            JsonString js = new ExJson.JsonString();
+            js.Test1();
+
+            Console.Read();
         }
     }
 }
