@@ -11,7 +11,9 @@ namespace ExJson
         static void Main(string[] args)
         {
             JsonString js = new ExJson.JsonString();
-            js.Test1();
+            js.DataSerializeJson();
+            js.DataSerializeXML();
+            js.JavaScriptJsonSerializer();
 
             Console.Read();
         }
