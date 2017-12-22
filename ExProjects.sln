@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm", "ExNet\Algorith
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmTests", "ExNet\AlgorithmTests\AlgorithmTests.csproj", "{4F5DF19D-C53C-454C-B402-DC6E3A2C248D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExJson", "ExJson\ExJson.csproj", "{6E6E9767-4E73-42A7-B6CE-23D904082197}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4F5DF19D-C53C-454C-B402-DC6E3A2C248D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F5DF19D-C53C-454C-B402-DC6E3A2C248D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F5DF19D-C53C-454C-B402-DC6E3A2C248D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E6E9767-4E73-42A7-B6CE-23D904082197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E6E9767-4E73-42A7-B6CE-23D904082197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E6E9767-4E73-42A7-B6CE-23D904082197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E6E9767-4E73-42A7-B6CE-23D904082197}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
