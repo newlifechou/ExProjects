@@ -6,7 +6,7 @@ html=res.read()
 #print(html)
 
 soup=BeautifulSoup(html)
-#print(soup.prettify())
+#print(soup.prettify())dsa
 print(soup.title)
 print("head head head head head head")
 print(soup.head)
