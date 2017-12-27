@@ -21,3 +21,12 @@ print(len(list(soup.descendants)))
 
 print(title_tag.contents)
 print(title_tag.string)
+p_soup=soup.p
+print(p_soup.attrs["class"])
+
+print("################")
+for str in soup.strings:
+    print(repr(str))
+print("***************")
+for str in soup.stripped_strings:
+    print(repr(str))
