@@ -30,3 +30,8 @@ for str in soup.strings:
 print("***************")
 for str in soup.stripped_strings:
     print(repr(str))
+
+print("###############")
+print(title_tag.parent)
+print(title_tag.string.parent)
+print(soup.parent)
