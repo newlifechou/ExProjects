@@ -12,3 +12,12 @@ print(title_tag.string)
 for child in head_tag.contents:
     if child != '\n':
         print(child)
+
+print("helloworld")
+for child in head_tag.descendants:
+    print(child)
+print(len(list(soup.children)))
+print(len(list(soup.descendants)))
+
+print(title_tag.contents)
+print(title_tag.string)
