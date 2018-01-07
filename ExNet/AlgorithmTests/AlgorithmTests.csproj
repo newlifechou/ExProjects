@@ -54,12 +54,6 @@
     <Compile Include="Array\NumberMethodTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Algorithm\Algorithm.csproj">
-      <Project>{8A24886D-949C-47D3-8286-A6202B3393B7}</Project>
-      <Name>Algorithm</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
