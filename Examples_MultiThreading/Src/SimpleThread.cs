@@ -10,6 +10,7 @@ namespace MultiThreading.Src
 {
     internal class SimpleThread
     {
+        #region TestMethod
         public void One()
         {
             //Thread t1 = new Thread(PrintNumber1);
@@ -62,6 +63,91 @@ namespace MultiThreading.Src
             }
 
         }
+
+        public void Three()
+        {
+            var t1 = new Thread(Delay);
+            var t2 = new Thread(Delay);
+            t1.IsBackground = true;
+            t1.Start(5000);
+            t2.Start(6000);
+        }
+
+        public void Four()
+        {
+            int i = 10;
+            var t1 = new Thread(() => Console.WriteLine(i));
+            //i = 20;
+            var t2 = new Thread(() => Console.WriteLine(i));
+            t1.Start();
+            t2.Start();
+
+        }
+
+
+        public void Five()
+        {
+            var c = new Counter();
+            var t1 = new Thread(() => TestCounter(c));
+            var t2 = new Thread(() => TestCounter(c));
+            var t3 = new Thread(() => TestCounter(c));
+            t1.Start();
+            t2.Start();
+            t3.Start();
+            t1.Join();
+            t2.Join();
+            t3.Join();
+            Console.WriteLine(c.Count);
+
+
+
+        }
+
+        public void Six()
+        {
+            try
+            {
+                var t = new Thread(Bad);
+                t.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void TestCounter(Counter c)
+        {
+            for (int i = 0; i < 10000; i++)
+            {
+                c.Increase();
+                c.Decrease();
+            }
+        }
+
+
+        #endregion
+
+        private void Delay(object s)
+        {
+            int t = (int)s;
+            Thread.Sleep(t);
+            Console.WriteLine("Job Done" + t);
+        }
+
+       private void Bad()
+        {
+            try
+            {
+                Thread.Sleep(TimeSpan.FromSeconds(2));
+                throw new Exception("Boom");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
 
         private void PrintNumber1()
         {

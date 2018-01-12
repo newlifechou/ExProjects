@@ -12,7 +12,7 @@ namespace MultiThreading
         static void Main(string[] args)
         {
             SimpleThread test = new SimpleThread();
-            test.Two();
+            test.Six();
 
 
 
