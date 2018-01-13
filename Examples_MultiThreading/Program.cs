@@ -14,8 +14,12 @@ namespace MultiThreading
             //SimpleThread test = new SimpleThread();
             //test.Six();
 
-            SyncThread test = new SyncThread();
-            test.Nine();
+            //SyncThread test = new SyncThread();
+            //test.Nine();
+
+            ThreadPoolTest test = new ThreadPoolTest();
+            test.Four();
+
 
 
             Console.Read();

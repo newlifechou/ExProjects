@@ -176,7 +176,7 @@ namespace MultiThreading.Src
             while (!_isCompleted)
             {
                 w.SpinOnce();
-                Console.WriteLine(w.NextSpinWillYield);
+                Console.WriteLine("是否应该让出CPU="+w.NextSpinWillYield+" "+w.Count);
             }
             Console.WriteLine("Waiting is completed");
 

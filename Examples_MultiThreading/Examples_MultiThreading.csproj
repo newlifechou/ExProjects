@@ -47,6 +47,7 @@
     <Compile Include="Src\SimpleThread.cs" />
     <Compile Include="Src\Counter.cs" />
     <Compile Include="Src\SyncThread.cs" />
+    <Compile Include="Src\ThreadPoolTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
