@@ -118,14 +118,141 @@ namespace MultiThreading.Src
             _countdown.Wait();
             _countdown.Dispose();
         }
-        private static CountdownEvent _countdown = new CountdownEvent(6);
 
-        private void PerformOperation(string msg,int seconds)
+        public void Seven()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(seconds));
-            Console.WriteLine(msg);
-            _countdown.Signal();
+            var t1 = new Thread(() => PlayMusic("the guitar", "play one", 5));
+            var t2 = new Thread(() => PlayMusic("the piano", "play two", 2));
+            t1.Start();
+            t2.Start();
 
+        }
+
+        public void Eight()
+        {
+            new Thread(ReadDict) { IsBackground = true }.Start();
+            new Thread(ReadDict) { IsBackground = true }.Start();
+            new Thread(ReadDict) { IsBackground = true }.Start();
+            new Thread(ReadDict) { IsBackground = true }.Start();
+            new Thread(()=>WriteDict("Thread1")) { IsBackground = true }.Start();
+            new Thread(() => WriteDict("Thread2")) { IsBackground = true }.Start();
+
+
+
+        }
+
+        public void Nine()
+        {
+            var t1 = new Thread(UserModeWait);
+            var t2 = new Thread(HybridSpinWait);
+            t1.Start();
+            Console.WriteLine("running in user mode");
+            Thread.Sleep(20);
+            _isCompleted = true;
+            Thread.Sleep(1000);
+            _isCompleted = false;
+            Console.WriteLine("running in hybrid mode");
+            t2.Start();
+            Thread.Sleep(5);
+            _isCompleted = true;
+
+
+
+
+        }
+        private volatile bool _isCompleted = false;
+        private void UserModeWait()
+        {
+            while (!_isCompleted)
+            {
+                Console.Write(".");
+            }
+            Console.WriteLine();
+            Console.WriteLine("Waiting is complete");
+        }
+        private void HybridSpinWait()
+        {
+            var w = new SpinWait();
+            while (!_isCompleted)
+            {
+                w.SpinOnce();
+                Console.WriteLine(w.NextSpinWillYield);
+            }
+            Console.WriteLine("Waiting is completed");
+
+        }
+
+
+
+
+
+        private ReaderWriterLockSlim _rw = new ReaderWriterLockSlim();
+        private Dictionary<int, int> _items = new Dictionary<int, int>();
+        private void ReadDict()
+        {
+            Console.WriteLine("Read the content of dictionary");
+            while (true)
+            {
+                try
+                {
+                    _rw.EnterReadLock();
+                    foreach (var item in _items.Keys)
+                    {
+                        Thread.Sleep(TimeSpan.FromSeconds(0.1));
+                    }
+                }
+                finally
+                {
+                    _rw.ExitReadLock();
+                }
+
+            }
+        }
+        private void WriteDict(string threadName)
+        {
+            Console.WriteLine("Write the content of dictionary");
+            while (true)
+            {
+                try
+                {
+                    int newKey = new Random().Next(250);
+                    _rw.EnterUpgradeableReadLock();
+                    if (!_items.ContainsKey(newKey))
+                    {
+                        try
+                        {
+                            _rw.EnterWriteLock();
+                            _items[newKey] = 1;
+                            Console.WriteLine($"{newKey}-{threadName}");
+                        }
+                        finally
+                        {
+                            _rw.ExitWriteLock();
+                        }
+                    }
+
+                }
+                finally
+                {
+                    _rw.ExitUpgradeableReadLock();
+                }
+            }
+
+        }
+
+        private static Barrier _barrier = new Barrier(2, b => Console.WriteLine("end of phase {0}", b.CurrentPhaseNumber + 1));
+        public void PlayMusic(string name, string msg, int seconds)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("*********");
+                Thread.Sleep(TimeSpan.FromSeconds(seconds));
+                Console.WriteLine($"{name} starts to {msg}");
+                Thread.Sleep(TimeSpan.FromSeconds(seconds));
+                Console.WriteLine($"{name} ends to {msg}");
+                _barrier.SignalAndWait();
+
+            }
         }
 
 
@@ -135,7 +262,14 @@ namespace MultiThreading.Src
 
 
 
+        private static CountdownEvent _countdown = new CountdownEvent(6);
+        private void PerformOperation(string msg, int seconds)
+        {
+            Thread.Sleep(TimeSpan.FromSeconds(seconds));
+            Console.WriteLine(msg);
+            _countdown.Signal();
 
+        }
 
         private static ManualResetEventSlim _mainEvent2 = new ManualResetEventSlim(false);
         private void TravelThroughGates(string threadName, int seconds)
