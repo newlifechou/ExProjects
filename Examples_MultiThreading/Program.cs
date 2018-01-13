@@ -11,10 +11,11 @@ namespace MultiThreading
     {
         static void Main(string[] args)
         {
-            SimpleThread test = new SimpleThread();
-            test.Six();
+            //SimpleThread test = new SimpleThread();
+            //test.Six();
 
-
+            SyncThread test = new SyncThread();
+            test.Three();
 
 
             Console.Read();

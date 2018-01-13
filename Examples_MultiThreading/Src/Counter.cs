@@ -11,6 +11,16 @@ namespace MultiThreading.Src
     {
         private readonly object syncObject = new object();
         public int Count { get; set; }
+        public int Count2;
+        public int ValueA;
+        public int ValueB;
+        public Counter()
+        {
+            Count = 0;
+            Count2 = 0;
+            ValueA = 100;
+            ValueB = 200;
+        }
         public void Increase()
         {
             //lock (syncObject)
@@ -29,5 +39,11 @@ namespace MultiThreading.Src
                 Count--;
             }
         }
+
+
+
+
+
+
     }
 }
