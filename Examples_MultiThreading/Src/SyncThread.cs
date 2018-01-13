@@ -63,6 +63,42 @@ namespace MultiThreading.Src
             }
         }
 
+        public void Four()
+        {
+
+            var t = new Thread(() => Process(10));
+            t.Start();
+
+            Console.WriteLine("waiting for another thread to complete work");
+            _workedEvent.WaitOne();
+            Console.WriteLine("first misson completed");
+            Console.WriteLine("Performing another operation on a main thread");
+            Thread.Sleep(TimeSpan.FromSeconds(5));
+            _mainEvent.Set();
+            Console.WriteLine("now running the second operation");
+            _workedEvent.WaitOne();
+            Console.WriteLine("second operation is completed");
+
+
+
+        }
+        private static AutoResetEvent _workedEvent = new AutoResetEvent(false);
+        private static AutoResetEvent _mainEvent = new AutoResetEvent(false);
+
+        private void Process(int seconds)
+        {
+            Console.WriteLine("Starting running a long work");
+            Thread.Sleep(TimeSpan.FromSeconds(seconds));
+            Console.WriteLine("Work is done!");
+            _workedEvent.Set();
+            Console.WriteLine("wait for a main thread to complete its task");
+            _mainEvent.WaitOne();
+            Console.WriteLine("starting second operation");
+            Thread.Sleep(TimeSpan.FromSeconds(seconds));
+            Console.WriteLine("Work is done!");
+            _workedEvent.Set();
+        }
+
         private static SemaphoreSlim _semaphore = new SemaphoreSlim(4);
         private void AccessDabase(string threadName,int seconds)
         {
