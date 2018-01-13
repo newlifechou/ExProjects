@@ -15,7 +15,7 @@ namespace MultiThreading
             //test.Six();
 
             SyncThread test = new SyncThread();
-            test.Four();
+            test.Six();
 
 
             Console.Read();

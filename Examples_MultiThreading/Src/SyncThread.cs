@@ -37,7 +37,7 @@ namespace MultiThreading.Src
             const string MutexName = "xszhou";
             using (var m = new Mutex(false, MutexName))
             {
-                if (!m.WaitOne(TimeSpan.FromSeconds(5),false))
+                if (!m.WaitOne(TimeSpan.FromSeconds(5), false))
                 {
                     Console.WriteLine("second instance is running!");
                 }
@@ -82,6 +82,72 @@ namespace MultiThreading.Src
 
 
         }
+
+        public void Five()
+        {
+            var t1 = new Thread(() => TravelThroughGates("Thread1", 5));
+            var t2 = new Thread(() => TravelThroughGates("Thread2", 6));
+            var t3 = new Thread(() => TravelThroughGates("Thread3", 7));
+            t1.Start();
+            t2.Start();
+            t3.Start();
+
+            Thread.Sleep(TimeSpan.FromSeconds(6));
+            Console.WriteLine("the gates are now open");
+            _mainEvent2.Set();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
+            _mainEvent2.Reset();
+            Console.WriteLine("the gate is closed now");
+
+            Thread.Sleep(TimeSpan.FromSeconds(10));
+            Console.WriteLine("the gates are now open");
+            _mainEvent2.Set();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
+            _mainEvent2.Reset();
+            Console.WriteLine("the gate is closed now");
+        }
+
+
+        public void Six()
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                var t = new Thread(() => PerformOperation("msg" + i, i));
+                t.Start();
+            }
+            _countdown.Wait();
+            _countdown.Dispose();
+        }
+        private static CountdownEvent _countdown = new CountdownEvent(6);
+
+        private void PerformOperation(string msg,int seconds)
+        {
+            Thread.Sleep(TimeSpan.FromSeconds(seconds));
+            Console.WriteLine(msg);
+            _countdown.Signal();
+
+        }
+
+
+
+
+
+
+
+
+
+
+        private static ManualResetEventSlim _mainEvent2 = new ManualResetEventSlim(false);
+        private void TravelThroughGates(string threadName, int seconds)
+        {
+            Console.WriteLine($"ThreadName:{threadName}");
+            Thread.Sleep(TimeSpan.FromSeconds(seconds));
+            Console.WriteLine($"{threadName} waits the gate to open");
+            _mainEvent2.Wait();
+            Console.WriteLine($"{threadName} enters the gates");
+
+        }
+
         private static AutoResetEvent _workedEvent = new AutoResetEvent(false);
         private static AutoResetEvent _mainEvent = new AutoResetEvent(false);
 
@@ -100,13 +166,13 @@ namespace MultiThreading.Src
         }
 
         private static SemaphoreSlim _semaphore = new SemaphoreSlim(4);
-        private void AccessDabase(string threadName,int seconds)
+        private void AccessDabase(string threadName, int seconds)
         {
-            Console.WriteLine( "{0} waits to access database",threadName);
+            Console.WriteLine("{0} waits to access database", threadName);
             _semaphore.Wait();
-            Console.WriteLine("{0} waits to granted a database",threadName);
+            Console.WriteLine("{0} waits to granted a database", threadName);
             Thread.Sleep(seconds * 1000);
-            Console.WriteLine("{0} is completed",threadName);
+            Console.WriteLine("{0} is completed", threadName);
             _semaphore.Release();
         }
 
@@ -119,13 +185,13 @@ namespace MultiThreading.Src
                 //Swap(ref c.ValueA, ref c.ValueB);
 
                 int orginal = Interlocked.Exchange(ref c.ValueA, 200);
-                if (orginal==100)
+                if (orginal == 100)
                 {
                     Interlocked.Exchange(ref c.ValueA, 100);
                 }
 
 
-                
+
                 //Interlocked.Increment(ref c.Count2);
                 //Interlocked.Decrement(ref c.Count2);
                 //c.Count2++;
