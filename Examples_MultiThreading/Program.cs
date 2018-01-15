@@ -17,10 +17,11 @@ namespace MultiThreading
             //SyncThread test = new SyncThread();
             //test.Nine();
 
-            ThreadPoolTest test = new ThreadPoolTest();
-            test.Four();
+            //ThreadPoolTest test = new ThreadPoolTest();
+            //test.Four();
 
-
+            TaskTest test = new TaskTest();
+            test.Two();
 
             Console.Read();
         }

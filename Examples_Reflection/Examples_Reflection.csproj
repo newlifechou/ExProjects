@@ -46,7 +46,7 @@
     <Compile Include="TestReflection.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UseReflectionDll\Examples_Reflectiondll.csproj">
+    <ProjectReference Include="..\Examples_ReflectionDll\Examples_Reflectiondll.csproj">
       <Project>{615935ab-3ff2-4266-aee7-385d2e98133b}</Project>
       <Name>Examples_Reflectiondll</Name>
     </ProjectReference>
