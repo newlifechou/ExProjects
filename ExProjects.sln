@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_Security", "Exampl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_Winform", "Examples_Winform\Examples_Winform.csproj", "{F62B432C-967F-417F-A8AA-A7F6C1339F84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_OO", "Examples_OO\Examples_OO.csproj", "{594FEC83-51BD-44EB-9640-CCEA72F9FB73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{F62B432C-967F-417F-A8AA-A7F6C1339F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F62B432C-967F-417F-A8AA-A7F6C1339F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F62B432C-967F-417F-A8AA-A7F6C1339F84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{594FEC83-51BD-44EB-9640-CCEA72F9FB73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{594FEC83-51BD-44EB-9640-CCEA72F9FB73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{594FEC83-51BD-44EB-9640-CCEA72F9FB73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{594FEC83-51BD-44EB-9640-CCEA72F9FB73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
