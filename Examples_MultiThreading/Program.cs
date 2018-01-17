@@ -9,7 +9,7 @@ namespace MultiThreading
 {
     class Program
     {
-        static void Main(string[] args)
+        static  void Main(string[] args)
         {
             //SimpleThread test = new SimpleThread();
             //test.Six();
@@ -20,8 +20,13 @@ namespace MultiThreading
             //ThreadPoolTest test = new ThreadPoolTest();
             //test.Four();
 
-            TaskTest test = new TaskTest();
+            //TaskTest test = new TaskTest();
+            //test.Two();
+
+            AsyncTest test = new AsyncTest();
             test.Two();
+
+
 
             Console.Read();
         }
