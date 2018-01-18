@@ -10,10 +10,10 @@ namespace Examples_IO.Src
     /// <summary>
     /// 该类测试了binary reader and writer
     /// </summary>
-    class BinaryReaderWriter
+    class TestBinaryReaderWriter
     {
         private string filePath;
-        public BinaryReaderWriter()
+        public TestBinaryReaderWriter()
         {
             filePath = Path.Combine(Environment.CurrentDirectory, "binary.dat");
         }

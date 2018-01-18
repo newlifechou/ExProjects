@@ -13,9 +13,13 @@ namespace Examples_IO
         static void Main(string[] args)
         {
             Console.WriteLine("开始程序");
-            BinaryReaderWriter test = new BinaryReaderWriter();
-            //test.TestRW();
-            test.TestSeek();
+            //TestBinaryReaderWriter test = new TestBinaryReaderWriter();
+            ////test.TestRW();
+            //test.TestSeek();
+
+
+
+
 
 
             Console.Read();
