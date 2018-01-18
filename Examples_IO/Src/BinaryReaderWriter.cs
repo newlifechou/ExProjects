@@ -25,6 +25,10 @@ namespace Examples_IO.Src
             ReadIt();
         }
 
+        public void TestSeek()
+        {
+            WriteBySeek();
+        }
 
         private void WriteIt()
         {
@@ -48,5 +52,34 @@ namespace Examples_IO.Src
             reader.Close();
 
         }
+
+        private void WriteBySeek()
+        {
+            FileStream fs = new FileStream(filePath, FileMode.Create);
+            UTF8Encoding utf8 = new UTF8Encoding();
+            BinaryWriter w = new BinaryWriter(fs, utf8);
+            int pos;
+            for (pos = 0; pos < 128; pos++)
+            {
+                w.Write((byte)(255 - pos));
+            }
+            w.Close();
+
+            BinaryReader r = new BinaryReader(File.OpenRead(filePath), utf8);
+            r.BaseStream.Seek(20, SeekOrigin.Begin);
+            Console.WriteLine(r.ReadByte());
+            //byte[] raw = new byte[128];
+            //fs.Read(raw, 0, 128);
+            //foreach (var item in raw)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+        }
+
+
+
+
     }
 }

@@ -14,8 +14,8 @@ namespace Examples_IO
         {
             Console.WriteLine("开始程序");
             BinaryReaderWriter test = new BinaryReaderWriter();
-            test.TestRW();
-            
+            //test.TestRW();
+            test.TestSeek();
 
 
             Console.Read();
