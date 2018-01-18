@@ -17,6 +17,8 @@ namespace Examples_IO
             ////test.TestRW();
             //test.TestSeek();
 
+            TestFile test = new TestFile();
+            test.Two();
 
 
 

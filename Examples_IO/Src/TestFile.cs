@@ -22,6 +22,10 @@ namespace Examples_IO.Src
 
         }
 
+        public void Two()
+        {
+            File.AppendAllText("fileappend.txt", "hello world");
+        }
 
     }
 }
