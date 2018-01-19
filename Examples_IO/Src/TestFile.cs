@@ -27,5 +27,11 @@ namespace Examples_IO.Src
             File.AppendAllText("fileappend.txt", "hello world");
         }
 
+        public void Three()
+        {
+            //不支持
+            //File.Encrypt("fileappend.txt");
+            Console.WriteLine("加密文件完成");
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace Examples_IO
             //test.TestSeek();
 
             TestFile test = new TestFile();
-            test.Two();
+            test.Three();
 
 
 
