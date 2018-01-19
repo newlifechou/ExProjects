@@ -21,7 +21,7 @@ namespace Examples_IO
             //test.Three();
 
             TestZip test = new TestZip();
-            test.Test1();
+            test.TestZipFile();
 
 
             Console.Read();
