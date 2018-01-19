@@ -17,11 +17,11 @@ namespace Examples_IO
             ////test.TestRW();
             //test.TestSeek();
 
-            TestFile test = new TestFile();
-            test.Three();
+            //TestFile test = new TestFile();
+            //test.Three();
 
-
-
+            TestZip test = new TestZip();
+            test.Test1();
 
 
             Console.Read();
