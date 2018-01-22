@@ -19,6 +19,20 @@ namespace Examples_MySql
             {
                 con.Open();
                 Console.WriteLine("打开mysql连接成功");
+
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "select * from customer";
+                MySqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Console.WriteLine(dr[0]);
+                    Console.WriteLine(dr[1]);
+                    Console.WriteLine(dr[2]);
+
+
+                }
+                dr.Close();
+
             }
             catch (Exception)
             {
