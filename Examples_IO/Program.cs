@@ -24,7 +24,7 @@ namespace Examples_IO
             //test.TestGzip();
 
             TestSharpZipLib test = new TestSharpZipLib();
-            test.FastZip();
+            test.TestZipOutputStream();
 
 
 
