@@ -10,6 +10,10 @@ namespace Examples_IO.Src
 {
     class TestZip
     {
+        private void OpenCurrentDirectory()
+        {
+            System.Diagnostics.Process.Start(Directory.GetCurrentDirectory());
+        }
         /// <summary>
         /// 使用ZipFile静态类
         /// 需要引用FileSystem dll
@@ -33,7 +37,7 @@ namespace Examples_IO.Src
             ZipFile.ExtractToDirectory(zipPath, extractPath);
             Console.WriteLine("解压缩成功");
 
-            // System.Diagnostics.Process.Start(extractPath);
+            OpenCurrentDirectory();
 
             string newfile = Path.Combine(Directory.GetCurrentDirectory(), "Examples_IO.exe.config");
 
@@ -64,6 +68,47 @@ namespace Examples_IO.Src
         }
 
 
+        public void TestDeflateStream()
+        {
+            string startPath = Path.Combine(Directory.GetCurrentDirectory(), "Zip");
+            string zipPath = Path.Combine(Directory.GetCurrentDirectory(), "zip.zip");
+            string extractPath = Path.Combine(Directory.GetCurrentDirectory(), "Extract");
 
+            DirectoryInfo startDir = new DirectoryInfo(startPath);
+            foreach (var file in startDir.GetFiles())
+            {
+                using (FileStream fs = file.OpenRead())
+                using (FileStream fs2 = File.OpenWrite(file.FullName + ".cmp"))
+                using (DeflateStream ds = new DeflateStream(fs2, CompressionLevel.Fastest))
+                {
+                    fs.CopyTo(ds);
+
+                }
+            }
+            Console.WriteLine("结束压缩");
+            Console.Read();
+            Console.WriteLine("删除所有的文件");
+            foreach (var file in startDir.GetFiles("*.cmp"))
+            {
+                file.Delete();
+            }
+
+        }
+
+        public void TestGzip()
+        {
+            string fileSource = Path.Combine(Directory.GetCurrentDirectory(), "Examples_IO.exe.config");
+            string fileTarget = Path.Combine(Directory.GetCurrentDirectory(), "config.gz");
+
+            using (FileStream fSource = File.OpenRead(fileSource))
+            using (FileStream fTarget = File.OpenWrite(fileTarget))
+            using (GZipStream gStream = new GZipStream(fTarget, CompressionLevel.Optimal))
+            {
+                fSource.CopyTo(gStream);
+            }
+            Console.WriteLine("压缩Gzip格式成功");
+
+            OpenCurrentDirectory();
+        }
     }
 }
