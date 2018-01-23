@@ -55,5 +55,17 @@ namespace Examples_IO.Src
         }
 
 
+        public void FastZip()
+        {
+            var fast = new FastZip();
+            fast.CreateZip("fastzip.zip", "zip", true, "");
+            Console.WriteLine("创建压缩包完毕");
+            fast.ExtractZip("fastzip.zip", "zip2", "");
+            Console.WriteLine("解压缩包完毕");
+
+        }
+
+
+
     }
 }
