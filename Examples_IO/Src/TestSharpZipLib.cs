@@ -42,6 +42,18 @@ namespace Examples_IO.Src
 
         }
 
+        public void ReadZip()
+        {
+            using (var zip=new ZipFile("myzip.zip"))
+            {
+                foreach (var item in zip)
+                {
+                    Console.WriteLine((item as ZipEntry).Name);
+                }
+            }
+            Console.WriteLine("读取压缩包完毕");
+        }
+
 
     }
 }
