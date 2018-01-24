@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C213F0C2-DCB0-4CDA-BB23-3B303EFA7E64}</ProjectGuid>
+    <ProjectGuid>{87A3D3D7-4F74-4C01-A7BE-2CFAE4BAE75D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Examples_IO</RootNamespace>
-    <AssemblyName>Examples_IO</AssemblyName>
+    <RootNamespace>Examples_CSharp</RootNamespace>
+    <AssemblyName>Examples_CSharp</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,13 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.IO.Compression" />
-    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,16 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Src\Chapter02.cs" />
+    <Compile Include="Src\Models\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Src\TestBinaryReaderWriter.cs" />
-    <Compile Include="Src\TestFile.cs" />
-    <Compile Include="Src\TestSharpZipLib.cs" />
-    <Compile Include="Src\TestZip.cs" />
+    <Compile Include="Src\Chapter01.cs" />
+    <Compile Include="Src\Models\Supplier.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="介绍.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Src\Assistance\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

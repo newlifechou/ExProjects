@@ -20,8 +20,12 @@ namespace Examples_IO
             //TestFile test = new TestFile();
             //test.Three();
 
-            TestZip test = new TestZip();
-            test.Test1();
+            //TestZip test = new TestZip();
+            //test.TestGzip();
+
+            TestSharpZipLib test = new TestSharpZipLib();
+            test.TestZipOutputStream();
+
 
 
             Console.Read();
