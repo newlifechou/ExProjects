@@ -13,6 +13,7 @@ namespace Examples_MySql
     {
         static void Main(string[] args)
         {
+            string conStr2 = Properties.Settings.Default.constr;
             string conStr = @"server=localhost;database=myshop;uid=root;pwd=newlifechou";
             MySqlConnection con = new MySqlConnection(conStr);
             try
