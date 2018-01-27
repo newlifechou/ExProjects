@@ -26,18 +26,10 @@ namespace Examples_CSharp.Src
     class Chapter02
     {
 
-
-
-
-
-
-
-
-
-
+#pragma warning disable 0067
         //字段风格的事件，可以看成是属性，实际在调用方法。
         public event StringProcessor OnStringProcessor;
-
+#pragma warning restore 0067
         public void UseDelegateInstance()
         {
             //委托的目的是间接操作
