@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Src\Chapter02.cs" />
+    <Compile Include="Src\Chapter06.cs" />
+    <Compile Include="Src\Chapter061.cs" />
     <Compile Include="Src\Models\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
