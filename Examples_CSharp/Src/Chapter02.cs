@@ -25,6 +25,16 @@ namespace Examples_CSharp.Src
     /// </summary>
     class Chapter02
     {
+
+
+
+
+
+
+
+
+
+
         //字段风格的事件，可以看成是属性，实际在调用方法。
         public event StringProcessor OnStringProcessor;
 

@@ -10,10 +10,10 @@ namespace InterViewStuff
     {
         static void Main(string[] args)
         {
+            Interview01 t = new Interview01();
+            t.Test01();
 
-
-
-           
+            Console.Read();
         }
     }
 }
