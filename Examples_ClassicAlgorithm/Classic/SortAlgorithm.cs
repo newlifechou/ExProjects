@@ -75,7 +75,7 @@ namespace Examples_ClassicAlgorithm.Classic
         }
 
         /// <summary>
-        /// 快速排序
+        /// 插入排序
         /// 插入到有序区，搜索，后移
         /// </summary>
         /// <param name="data"></param>
@@ -99,7 +99,7 @@ namespace Examples_ClassicAlgorithm.Classic
         }
 
         /// <summary>
-        /// 快速排序优化
+        /// 插入排序优化
         /// </summary>
         /// <param name="data"></param>
         public void InsertSortBetter(int[] data)
@@ -161,22 +161,120 @@ namespace Examples_ClassicAlgorithm.Classic
             }
         }
 
+        /// <summary>
+        /// 归并排序
+        /// 分治法
+        /// 分别将两个已经排序好的序列分别插入到第三个序列中
+        /// </summary>
+        public void MergeSort(int[] a)
+        {
+            MergeSort(a, 0, a.Length - 1);
+        }
+
+        private void MergeSort(int[] a, int first, int last)
+        {
+            if (first < last)
+            {
+                int mid = (first + last) / 2;
+                MergeSort(a, first, mid);//left
+                MergeSort(a, mid + 1, last);//right
+                MergeTwoArray(a, first, mid, last);
+            }
+        }
+
+        private void MergeTwoArray(int[] data, int first, int mid, int last)
+        {
+            int i, j, k;
+            i = first;
+            j = mid + 1;
+            k = 0;
+            int m = mid;
+            int n = last;
+
+            int[] temp = new int[data.Length];
+
+            while (i <= m && j <= n)
+            {
+                if (data[i] <= data[j])
+                {
+                    temp[k] = data[i];
+                    k++;
+                    i++;
+                }
+                else
+                {
+                    temp[k] = data[j];
+                    k++;
+                    j++;
+                }
+
+            }
+
+            while (i <= m)
+            {
+                temp[k] = data[i];
+                k++; i++;
+            }
+            while (j <= n)
+            {
+                temp[k] = data[j];
+                k++; j++;
+            }
 
 
+            for (int index = 0; index < k; index++)
+            {
+                data[first + index] = temp[index];
+            }
+
+        }
 
         /// <summary>
         /// 快速排序
         /// </summary>
+        /// 挖坑填数+分治
         /// 1.从数组中选择一个数作为基数（第一个）
         /// 2.分区，将比它大的分左边，比它小的分右边
         /// 3.对左右分区重复第2步，直到分区只有一个数
-        public void QuickSort(int[] unsorted)
+        public void QuickSort(int[] data)
         {
-
+            QuickSortAdjust(data, 0, data.Length - 1);
         }
 
-        private void Divide(int[] unsorted, int low, int high)
+        private void QuickSortAdjust(int[] data, int left, int right)
         {
+            if (left < right)
+            {
+                int i = left, j = right;
+                int x = data[left];
+                while (i < j)
+                {
+                    //from right to left to find less than x
+                    while (i < j && data[j] >= x)
+                    {
+                        j--;
+                    }
+                    if (i < j)
+                    {
+                        data[i] = data[j];
+                        j--;
+                    }
+
+                    //from left to right to find more than x
+                    while (i < j && data[i] < x)
+                    {
+                        i++;
+                    }
+                    if (i < j)
+                    {
+                        data[j] = data[i];
+                        j--;
+                    }
+                }
+
+
+
+            }
 
         }
 

@@ -84,5 +84,29 @@ namespace Examples_ClassicAlgorithm.Classic.Tests
                 Assert.AreEqual(dataSorted[i], data[i]);
             }
         }
+
+        [TestMethod()]
+        public void MergeSortTest()
+        {
+            int[] data = { 3, 6, 4, 2, 1, 7, 4 };
+            int[] dataSorted = { 1, 2, 3, 4, 4, 6, 7 };
+            new SortAlgorithm().MergeSort(data);
+            for (int i = 0; i < data.Length; i++)
+            {
+                Assert.AreEqual(dataSorted[i], data[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void QuickSortTest()
+        {
+            int[] data = { 3, 6, 4, 2, 1, 7, 4 };
+            int[] dataSorted = { 1, 2, 3, 4, 4, 6, 7 };
+            new SortAlgorithm().QuickSort(data);
+            for (int i = 0; i < data.Length; i++)
+            {
+                Assert.AreEqual(dataSorted[i], data[i]);
+            }
+        }
     }
 }
