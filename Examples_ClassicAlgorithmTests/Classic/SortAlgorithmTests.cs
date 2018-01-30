@@ -11,6 +11,7 @@ namespace Examples_ClassicAlgorithm.Classic.Tests
     [TestClass()]
     public class SortAlgorithmTests
     {
+
         [TestMethod()]
         public void BubbleSortNormalTest()
         {
@@ -27,7 +28,7 @@ namespace Examples_ClassicAlgorithm.Classic.Tests
         [TestMethod()]
         public void BubbleSortBetterTest()
         {
-            int[] data = { 3, 4, 4, 2, 1, 7, 6 };
+            int[] data = { 3, 6, 4, 2, 1, 7, 4 };
             int[] dataSorted = { 1, 2, 3, 4, 4, 6, 7 };
             new SortAlgorithm().BubbleSortBetter(data);
             for (int i = 0; i < data.Length; i++)
@@ -39,8 +40,8 @@ namespace Examples_ClassicAlgorithm.Classic.Tests
         [TestMethod()]
         public void InsertSortTest()
         {
-            int[] data = { 3, 4, 4, 2, 1, 7, 6, 8 };
-            int[] dataSorted = { 1, 2, 3, 4, 4, 6, 7, 8 };
+            int[] data = { 3, 6, 4, 2, 1, 7, 4 };
+            int[] dataSorted = { 1, 2, 3, 4, 4, 6, 7 };
             new SortAlgorithm().InsertSort(data);
             for (int i = 0; i < data.Length; i++)
             {
@@ -51,9 +52,33 @@ namespace Examples_ClassicAlgorithm.Classic.Tests
         [TestMethod()]
         public void InsertSortBetterTest()
         {
-            int[] data = { 3, 4, 4, 2, 1, 7, 6, 8 };
-            int[] dataSorted = { 1, 2, 3, 4, 4, 6, 7, 8 };
+            int[] data = { 3, 6, 4, 2, 1, 7, 4 };
+            int[] dataSorted = { 1, 2, 3, 4, 4, 6, 7 };
             new SortAlgorithm().InsertSortBetter(data);
+            for (int i = 0; i < data.Length; i++)
+            {
+                Assert.AreEqual(dataSorted[i], data[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void ShellSortTest()
+        {
+            int[] data = { 3, 6, 4, 2, 1, 7, 4 };
+            int[] dataSorted = { 1, 2, 3, 4, 4, 6, 7 };
+            new SortAlgorithm().ShellSort(data);
+            for (int i = 0; i < data.Length; i++)
+            {
+                Assert.AreEqual(dataSorted[i], data[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void DirectSelectTest()
+        {
+            int[] data = { 3, 6, 4, 2, 1, 7, 4 };
+            int[] dataSorted = { 1, 2, 3, 4, 4, 6, 7 };
+            new SortAlgorithm().DirectSelectSort(data);
             for (int i = 0; i < data.Length; i++)
             {
                 Assert.AreEqual(dataSorted[i], data[i]);
