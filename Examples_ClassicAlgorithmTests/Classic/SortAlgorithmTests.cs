@@ -12,7 +12,7 @@ namespace Examples_ClassicAlgorithm.Classic.Tests
     public class SortAlgorithmTests
     {
         [TestMethod()]
-        public void BubbleSortTest()
+        public void BubbleSortNormalTest()
         {
             int[] data = { 3, 6, 4, 2, 1, 7, 4 };
             int[] dataSorted = { 1, 2, 3, 4, 4, 6, 7 };
@@ -22,6 +22,42 @@ namespace Examples_ClassicAlgorithm.Classic.Tests
                 Assert.AreEqual(dataSorted[i], data[i]);
             }
 
+        }
+
+        [TestMethod()]
+        public void BubbleSortBetterTest()
+        {
+            int[] data = { 3, 4, 4, 2, 1, 7, 6 };
+            int[] dataSorted = { 1, 2, 3, 4, 4, 6, 7 };
+            new SortAlgorithm().BubbleSortBetter(data);
+            for (int i = 0; i < data.Length; i++)
+            {
+                Assert.AreEqual(dataSorted[i], data[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void InsertSortTest()
+        {
+            int[] data = { 3, 4, 4, 2, 1, 7, 6, 8 };
+            int[] dataSorted = { 1, 2, 3, 4, 4, 6, 7, 8 };
+            new SortAlgorithm().InsertSort(data);
+            for (int i = 0; i < data.Length; i++)
+            {
+                Assert.AreEqual(dataSorted[i], data[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void InsertSortBetterTest()
+        {
+            int[] data = { 3, 4, 4, 2, 1, 7, 6, 8 };
+            int[] dataSorted = { 1, 2, 3, 4, 4, 6, 7, 8 };
+            new SortAlgorithm().InsertSortBetter(data);
+            for (int i = 0; i < data.Length; i++)
+            {
+                Assert.AreEqual(dataSorted[i], data[i]);
+            }
         }
     }
 }
