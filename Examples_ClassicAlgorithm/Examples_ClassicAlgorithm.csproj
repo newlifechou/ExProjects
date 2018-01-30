@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{87A3D3D7-4F74-4C01-A7BE-2CFAE4BAE75D}</ProjectGuid>
+    <ProjectGuid>{567221E1-B255-4A24-8EDC-6C95E77A9944}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Examples_CSharp</RootNamespace>
-    <AssemblyName>Examples_CSharp</AssemblyName>
+    <RootNamespace>Examples_ClassicAlgorithm</RootNamespace>
+    <AssemblyName>Examples_ClassicAlgorithm</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,23 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Src\Chapter02.cs" />
-    <Compile Include="Src\Chapter06.cs" />
-    <Compile Include="Src\Chapter08.cs" />
-    <Compile Include="Src\Chapter09.cs" />
-    <Compile Include="Src\ExtensionCollection.cs" />
-    <Compile Include="Src\Models\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Src\Chapter01.cs" />
-    <Compile Include="Src\Models\Supplier.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="介绍.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Src\Assistance\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
