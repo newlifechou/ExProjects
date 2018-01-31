@@ -231,6 +231,7 @@ namespace Examples_ClassicAlgorithm.Classic
 
         /// <summary>
         /// 快速排序
+        /// 具体实现不是很好理解
         /// </summary>
         /// 挖坑填数+分治
         /// 1.从数组中选择一个数作为基数（第一个）
@@ -246,11 +247,11 @@ namespace Examples_ClassicAlgorithm.Classic
             if (left < right)
             {
                 int i = left, j = right;
-                int x = data[left];
+                int temp = data[left];
                 while (i < j)
                 {
                     //from right to left to find less than x
-                    while (i < j && data[j] >= x)
+                    while (i < j && data[j] >= temp)
                     {
                         j--;
                     }
@@ -261,10 +262,11 @@ namespace Examples_ClassicAlgorithm.Classic
                     }
 
                     //from left to right to find more than x
-                    while (i < j && data[i] < x)
+                    while (i < j && data[i] < temp)
                     {
                         i++;
                     }
+
                     if (i < j)
                     {
                         data[j] = data[i];
@@ -272,15 +274,12 @@ namespace Examples_ClassicAlgorithm.Classic
                     }
                 }
 
-
-
+                data[i] = temp;
+                QuickSortAdjust(data, left, i - 1);
+                QuickSortAdjust(data, i + 1, right);
             }
 
         }
-
-
-
-
 
 
     }

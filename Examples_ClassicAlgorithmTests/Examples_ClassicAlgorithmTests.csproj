@@ -51,6 +51,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Classic\RecursionTests.cs" />
     <Compile Include="Classic\SortAlgorithmTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
