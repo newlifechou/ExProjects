@@ -244,41 +244,11 @@ namespace Examples_ClassicAlgorithm.Classic
 
         private void QuickSortAdjust(int[] data, int left, int right)
         {
-            if (left < right)
+            int pivot = data[left];
+            while (left<right)
             {
-                int i = left, j = right;
-                int temp = data[left];
-                while (i < j)
-                {
-                    //from right to left to find less than x
-                    while (i < j && data[j] >= temp)
-                    {
-                        j--;
-                    }
-                    if (i < j)
-                    {
-                        data[i] = data[j];
-                        j--;
-                    }
-
-                    //from left to right to find more than x
-                    while (i < j && data[i] < temp)
-                    {
-                        i++;
-                    }
-
-                    if (i < j)
-                    {
-                        data[j] = data[i];
-                        j--;
-                    }
-                }
-
-                data[i] = temp;
-                QuickSortAdjust(data, left, i - 1);
-                QuickSortAdjust(data, i + 1, right);
+               
             }
-
         }
 
 
