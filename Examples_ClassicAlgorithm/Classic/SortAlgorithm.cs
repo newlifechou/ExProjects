@@ -26,6 +26,18 @@ namespace Examples_ClassicAlgorithm.Classic
             a = b;
             b = tmp;
         }
+
+        /// <summary>
+        /// 如果a小于b，返回true
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        private bool Less(int a, int b)
+        {
+            return a < b;
+        }
+
         #endregion
 
         /// <summary>
@@ -245,9 +257,9 @@ namespace Examples_ClassicAlgorithm.Classic
         private void QuickSortAdjust(int[] data, int left, int right)
         {
             int pivot = data[left];
-            while (left<right)
+            while (left < right)
             {
-               
+
             }
         }
 
