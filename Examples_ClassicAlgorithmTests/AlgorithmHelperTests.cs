@@ -20,5 +20,14 @@ namespace Examples_ClassicAlgorithm.Tests
             Assert.IsFalse(AlgorithmHelper.IsSorted(data2));
 
         }
+
+        [TestMethod()]
+        public void CreateRandomArrayTest()
+        {
+            int[] data1 = AlgorithmHelper.CreateRandomArray(10);
+            Assert.IsFalse(AlgorithmHelper.IsSorted(data1));
+            int[] data2 = AlgorithmHelper.CreateRandomArray(20);
+            Assert.IsFalse(AlgorithmHelper.IsSorted(data2));
+        }
     }
 }
