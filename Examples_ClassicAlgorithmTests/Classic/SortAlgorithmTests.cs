@@ -50,6 +50,18 @@ namespace Examples_ClassicAlgorithm.Classic.Tests
         }
 
         [TestMethod()]
+        public void InsertSortAnotherTest()
+        {
+            int[] data = { 3, 6, 4, 2, 1, 7, 4 };
+            int[] dataSorted = { 1, 2, 3, 4, 4, 6, 7 };
+            new SortAlgorithm().InsertSortAnother(data);
+            for (int i = 0; i < data.Length; i++)
+            {
+                Assert.AreEqual(dataSorted[i], data[i]);
+            }
+        }
+
+        [TestMethod()]
         public void InsertSortBetterTest()
         {
             int[] data = { 3, 6, 4, 2, 1, 7, 4 };
@@ -108,5 +120,6 @@ namespace Examples_ClassicAlgorithm.Classic.Tests
                 Assert.AreEqual(dataSorted[i], data[i]);
             }
         }
+
     }
 }

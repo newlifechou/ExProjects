@@ -9,6 +9,7 @@ namespace Examples_ClassicAlgorithm.Classic
     /// <summary>
     /// 排序算法集合
     ///所有的排序都是从小到大
+    ///只考虑int类型的排序
     /// </summary>
     public class SortAlgorithm
     {
@@ -26,6 +27,21 @@ namespace Examples_ClassicAlgorithm.Classic
             a = b;
             b = tmp;
         }
+
+        /// <summary>
+        /// 交换的重载
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="positionA"></param>
+        /// <param name="positionB"></param>
+        private void Swap(int[] data, int positionA, int positionB)
+        {
+            int n = data.Length;
+            int tmp = data[positionA];
+            data[positionA] = data[positionB];
+            data[positionB] = tmp;
+        }
+
 
         /// <summary>
         /// 如果a小于b，返回true
@@ -109,6 +125,23 @@ namespace Examples_ClassicAlgorithm.Classic
                 }
             }
         }
+
+        /// <summary>
+        /// 另外一个插入排序的实现。
+        /// </summary>
+        /// <param name="data"></param>
+        public void InsertSortAnother(int[] data)
+        {
+            int n = data.Length;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = i; j > 0 && Less(data[j], data[j - 1]); j--)
+                {
+                    Swap(ref data[j], ref data[j - 1]);
+                }
+            }
+        }
+
 
         /// <summary>
         /// 插入排序优化
@@ -240,6 +273,62 @@ namespace Examples_ClassicAlgorithm.Classic
             }
 
         }
+
+        /// <summary>
+        /// 归并
+        /// 将a[lo,mid]和a[mid+1,hi]归并到一起
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="lo"></param>
+        /// <param name="mid"></param>
+        /// <param name="hi"></param>
+        private void Merge(int[] data, int lo, int mid, int hi)
+        {
+            int i = lo;
+            int j = mid + 1;
+            int tempCount = hi - lo;
+            int[] temp = new int[tempCount];
+            for (int k = i; k <= hi; k++)
+            {
+                temp[k] = data[k];
+            }
+
+            for (int k = lo; k <= hi; k++)
+            {
+                if (i > mid)
+                {
+                    data[k] = temp[j];
+                    j++;
+                }
+                else if (j > hi)
+                {
+                    data[k] = temp[i];
+                    i++;
+                }
+                else if (Less(temp[j], temp[i]))
+                {
+                    data[k] = temp[j];
+                    j++;
+                }
+                else
+                {
+                    data[k] = temp[i];
+                    i++;
+                }
+
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
 
         /// <summary>
         /// 快速排序
