@@ -45,6 +45,7 @@
     <Compile Include="AlgorithmHelper.cs" />
     <Compile Include="Classic\Recursion.cs" />
     <Compile Include="Classic\SortAlgorithm.cs" />
+    <Compile Include="Others\Special.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
