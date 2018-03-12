@@ -6,10 +6,24 @@ using System.Threading.Tasks;
 
 namespace Examples_ClassicAlgorithm.DataStructure
 {
-    public class BTreeNode<T>
+    /// <summary>
+    /// 二叉树节点
+    /// 使用int类型作为简化
+    /// </summary>
+    public class BTreeNode
     {
-        public T data;
-        public BTreeNode<T> LChild { get; set; }
-        public BTreeNode<T> RChild { get; set; }
+        public BTreeNode()
+        {
+
+        }
+        public BTreeNode(int data,BTreeNode left,BTreeNode right)
+        {
+            this.data = data;
+            this.LChild = left;
+            this.RChild = right;
+        }
+        public int data;
+        public BTreeNode LChild { get; set; }
+        public BTreeNode RChild { get; set; }
     }
 }
