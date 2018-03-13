@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Examples_ClassicAlgorithm.TEST
 {
-    class TestBTree
+    static class TestBTree
     {
-        public void TestPreOrderTraverse()
+        public static void TestPreOrderTraverse()
         {
             BTreeNode root = new BTreeNode();
             root.Data = "A";
