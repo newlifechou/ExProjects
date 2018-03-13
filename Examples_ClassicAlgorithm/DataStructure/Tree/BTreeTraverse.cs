@@ -30,22 +30,22 @@ namespace Examples_ClassicAlgorithm.DataStructure.Tree
         /// 中序遍历
         /// </summary>
         /// <param name="root"></param>
-        public void MidOrder(BTreeNode root)
+        public void InOrder(BTreeNode root)
         {
             if (root == null) return;
             //Access Data
             PreOrder(root.LeftChild);
-            Console.WriteLine(root.Data);
+            Console.Write(root.Data);
             PreOrder(root.RightChild);
         }
 
-        public void AfterOrder(BTreeNode root)
+        public void PostOrder(BTreeNode root)
         {
             if (root == null) return;
             //Access Data
             PreOrder(root.LeftChild);
             PreOrder(root.RightChild);
-            Console.WriteLine(root.Data);
+            Console.Write(root.Data);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Examples_ClassicAlgorithm.DataStructure.Tree
         /// 
         /// </summary>
         /// <param name="root"></param>
-        public void NaturalOrder(BTreeNode root)
+        public void SequenceOrder(BTreeNode root)
         {
             //使用队列
             Queue<BTreeNode> queue = new Queue<BTreeNode>();
