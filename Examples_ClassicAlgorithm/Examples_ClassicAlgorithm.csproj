@@ -45,9 +45,10 @@
     <Compile Include="AlgorithmHelper.cs" />
     <Compile Include="Classic\Recursion.cs" />
     <Compile Include="Classic\SortAlgorithm.cs" />
-    <Compile Include="DataStructure\BTreeGenerator.cs" />
-    <Compile Include="DataStructure\BTreeNode.cs" />
-    <Compile Include="DataStructure\BTreeTraverse.cs" />
+    <Compile Include="DataStructure\Tree\BTreeGenerator.cs" />
+    <Compile Include="DataStructure\Tree\BTreeNode.cs" />
+    <Compile Include="DataStructure\Tree\BTreeTraverse.cs" />
+    <Compile Include="DataStructure\Tree\TreeNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

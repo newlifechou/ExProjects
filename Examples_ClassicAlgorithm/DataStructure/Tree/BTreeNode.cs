@@ -16,13 +16,13 @@ namespace Examples_ClassicAlgorithm.DataStructure
         {
 
         }
-        public BTreeNode(int data,BTreeNode left,BTreeNode right)
+        public BTreeNode(string data,BTreeNode left,BTreeNode right)
         {
             this.data = data;
             this.LChild = left;
             this.RChild = right;
         }
-        public int data;
+        public string data;
         public BTreeNode LChild { get; set; }
         public BTreeNode RChild { get; set; }
     }

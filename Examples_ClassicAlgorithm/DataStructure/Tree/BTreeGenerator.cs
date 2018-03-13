@@ -13,19 +13,17 @@ namespace Examples_ClassicAlgorithm.DataStructure
     {
         public void Generate(BTreeNode node)
         {
-            Console.WriteLine("Please enter value of BTree:(-1=empty)");
-            int inputValue;
+            Console.WriteLine("Please enter value of BTree:(#=empty)");
             string inputStr = Console.ReadLine();
-            int.TryParse(inputStr, out inputValue);
 
-            if (inputValue == -1)
+            if (inputStr =="#")
             {
                 node = null;
             }
             else
             {
                 node = new BTreeNode();
-                node.data = inputValue;
+                node.data = inputStr;
                 Generate(node.LChild);
                 Generate(node.RChild);
             }
