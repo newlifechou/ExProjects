@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Examples_ClassicAlgorithm.DataStructure
+namespace Examples_ClassicAlgorithm.DataStructure.Tree
 {
     /// <summary>
     /// 二叉树节点
@@ -18,11 +18,11 @@ namespace Examples_ClassicAlgorithm.DataStructure
         }
         public BTreeNode(string data,BTreeNode left,BTreeNode right)
         {
-            this.data = data;
+            this.Data = data;
             this.LChild = left;
             this.RChild = right;
         }
-        public string data;
+        public string Data;
         public BTreeNode LChild { get; set; }
         public BTreeNode RChild { get; set; }
     }

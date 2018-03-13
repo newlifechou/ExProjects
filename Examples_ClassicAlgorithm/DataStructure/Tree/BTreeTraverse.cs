@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Examples_ClassicAlgorithm.DataStructure
+namespace Examples_ClassicAlgorithm.DataStructure.Tree
 {
     /// <summary>
     ////使用递归思想，栈
@@ -20,7 +20,7 @@ namespace Examples_ClassicAlgorithm.DataStructure
         {
             if (root == null) return;
             //Access Data
-            Console.WriteLine(root.data);
+            Console.Write(root.Data);
             //递归左和右
             PreOrder(root.LChild);
             PreOrder(root.RChild);
@@ -35,7 +35,7 @@ namespace Examples_ClassicAlgorithm.DataStructure
             if (root == null) return;
             //Access Data
             PreOrder(root.LChild);
-            Console.WriteLine(root.data);
+            Console.WriteLine(root.Data);
             PreOrder(root.RChild);
         }
 
@@ -45,7 +45,7 @@ namespace Examples_ClassicAlgorithm.DataStructure
             //Access Data
             PreOrder(root.LChild);
             PreOrder(root.RChild);
-            Console.WriteLine(root.data);
+            Console.WriteLine(root.Data);
         }
 
         /// <summary>
