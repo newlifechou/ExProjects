@@ -22,8 +22,8 @@ namespace Examples_ClassicAlgorithm.DataStructure.Tree
             //Access Data
             Console.Write(root.Data);
             //递归左和右
-            PreOrder(root.LChild);
-            PreOrder(root.RChild);
+            PreOrder(root.LeftChild);
+            PreOrder(root.RightChild);
         }
 
         /// <summary>
@@ -34,17 +34,17 @@ namespace Examples_ClassicAlgorithm.DataStructure.Tree
         {
             if (root == null) return;
             //Access Data
-            PreOrder(root.LChild);
+            PreOrder(root.LeftChild);
             Console.WriteLine(root.Data);
-            PreOrder(root.RChild);
+            PreOrder(root.RightChild);
         }
 
         public void AfterOrder(BTreeNode root)
         {
             if (root == null) return;
             //Access Data
-            PreOrder(root.LChild);
-            PreOrder(root.RChild);
+            PreOrder(root.LeftChild);
+            PreOrder(root.RightChild);
             Console.WriteLine(root.Data);
         }
 
@@ -58,8 +58,8 @@ namespace Examples_ClassicAlgorithm.DataStructure.Tree
             //使用队列
             Queue<BTreeNode> queue = new Queue<BTreeNode>();
             queue.Enqueue(root);
-            queue.Enqueue(root.LChild);
-            queue.Enqueue(root.RChild);
+            queue.Enqueue(root.LeftChild);
+            queue.Enqueue(root.RightChild);
 
 
         }

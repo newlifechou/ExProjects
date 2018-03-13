@@ -16,14 +16,22 @@ namespace Examples_ClassicAlgorithm.DataStructure.Tree
         {
 
         }
+
+        public BTreeNode(string data)
+        {
+            this.Data = data;
+            this.LeftChild = null;
+            this.RightChild = null;
+        }
+
         public BTreeNode(string data,BTreeNode left,BTreeNode right)
         {
             this.Data = data;
-            this.LChild = left;
-            this.RChild = right;
+            this.LeftChild = left;
+            this.RightChild = right;
         }
         public string Data;
-        public BTreeNode LChild { get; set; }
-        public BTreeNode RChild { get; set; }
+        public BTreeNode LeftChild { get; set; }
+        public BTreeNode RightChild { get; set; }
     }
 }

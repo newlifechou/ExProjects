@@ -28,9 +28,9 @@ namespace Examples_ClassicAlgorithm.DataStructure.Tree
                 root.Data = inputData;
                 Console.WriteLine("#Current Root is " + root.Data);
                 Console.WriteLine("Left Son of " + root.Data);
-                PreOrderCreate(root.LChild);
+                PreOrderCreate(root.LeftChild);
                 Console.WriteLine("Right Son of " + root.Data);
-                PreOrderCreate(root.RChild);
+                PreOrderCreate(root.RightChild);
             }
 
         }
