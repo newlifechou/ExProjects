@@ -49,6 +49,7 @@
     <Compile Include="DataStructure\Tree\BTreeNode.cs" />
     <Compile Include="DataStructure\Tree\BTreeTraverse.cs" />
     <Compile Include="DataStructure\Tree\TreeNode.cs" />
+    <Compile Include="DataStructure\Tree\TreeNodeWithClue.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TEST\TestBTree.cs" />
