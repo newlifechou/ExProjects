@@ -35,5 +35,37 @@ namespace Examples_ClassicAlgorithm.DataStructure.Tree
             }
 
         }
+
+        private BTreeNodeWithClue pre;
+        /// <summary>
+        ///Clue PreOrder BTree
+        /// </summary>
+        /// <param name="currentNode"></param>
+        public void CluePreOrderBTree(ref BTreeNodeWithClue currentNode)
+        {
+            if (currentNode == null)
+                return;
+            //if there is no left child,left node points to previous
+            if (currentNode.LeftChild == null)
+            {
+                currentNode.IsLeft = false;
+                currentNode.LeftChild = pre;
+            }
+            //if there is no right child,right node points to next
+            if (pre != null && pre.RightChild == null)
+            {
+                pre.IsRight = false;
+                pre.RightChild = currentNode;
+            }
+
+            pre = currentNode;
+
+            CluePreOrderBTree(ref currentNode.LeftChild);
+            CluePreOrderBTree(ref currentNode.RightChild);
+        }
+
+
+
+
     }
 }

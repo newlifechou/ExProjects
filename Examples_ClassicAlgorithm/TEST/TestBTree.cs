@@ -35,5 +35,26 @@ namespace Examples_ClassicAlgorithm.TEST
             BTreeTraverse traverse = new BTreeTraverse();
             traverse.PreOrder(root);
         }
+
+        public static void TestPreOrderCreateWithClue()
+        {
+            BTreeNodeWithClue A = new BTreeNodeWithClue();
+            A.Data = "A";
+            BTreeNodeWithClue B = new BTreeNodeWithClue();
+            B.Data = "B";
+            BTreeNodeWithClue C = new BTreeNodeWithClue();
+            C.Data = "C";
+            BTreeNodeWithClue D = new BTreeNodeWithClue();
+            D.Data = "D";
+            BTreeNodeWithClue E = new BTreeNodeWithClue();
+            E.Data = "E";
+
+            A.LeftChild = B;
+            A.RightChild = C;
+            B.LeftChild = D;
+            B.RightChild = E;
+
+        }
+
     }
 }
