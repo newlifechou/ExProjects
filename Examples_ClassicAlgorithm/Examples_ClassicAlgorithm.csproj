@@ -48,6 +48,7 @@
     <Compile Include="DataStructure\Tree\BTreeCreator.cs" />
     <Compile Include="DataStructure\Tree\BTreeNode.cs" />
     <Compile Include="DataStructure\Tree\BTreeTraverse.cs" />
+    <Compile Include="DataStructure\Tree\BTreeWithClueCreator.cs" />
     <Compile Include="DataStructure\Tree\TreeNode.cs" />
     <Compile Include="DataStructure\Tree\BTreeNodeWithClue.cs" />
     <Compile Include="Program.cs" />
