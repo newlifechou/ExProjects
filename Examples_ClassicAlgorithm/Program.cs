@@ -11,7 +11,7 @@ namespace Examples_ClassicAlgorithm
     {
         static void Main(string[] args)
         {
-            TestBTree.TestPreOrderTraverse();
+            TestBTree.TestBTreeCreate() ;
 
             Console.Read();
         }

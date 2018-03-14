@@ -11,9 +11,13 @@ namespace Examples_ClassicAlgorithm.DataStructure.Tree
     /// </summary>
     public class BTreeCreator
     {
-        public void PreOrderCreate(BTreeNode root)
+        /// <summary>
+        /// PreOrderCreate
+        /// </summary>
+        /// <param name="root">这里必须使用out，否则new的会被销毁</param>
+        public void PreOrderCreate(out BTreeNode root)
         {
-            Console.WriteLine("Please enter value of BTree:(#=empty)");
+            Console.WriteLine("Enter value:(#=empty)");
             string inputData = Console.ReadLine();
             if (inputData == "#")
             {
@@ -21,16 +25,13 @@ namespace Examples_ClassicAlgorithm.DataStructure.Tree
             }
             else
             {
-                if (root == null)
-                {
-                    root = new BTreeNode();
-                }
+                root = new BTreeNode();
                 root.Data = inputData;
                 Console.WriteLine("#Current Root is " + root.Data);
                 Console.WriteLine("Left Son of " + root.Data);
-                PreOrderCreate(root.LeftChild);
+                PreOrderCreate(out root.LeftChild);
                 Console.WriteLine("Right Son of " + root.Data);
-                PreOrderCreate(root.RightChild);
+                PreOrderCreate(out root.RightChild);
             }
 
         }

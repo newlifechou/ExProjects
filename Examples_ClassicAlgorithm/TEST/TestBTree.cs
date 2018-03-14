@@ -9,6 +9,17 @@ namespace Examples_ClassicAlgorithm.TEST
 {
     static class TestBTree
     {
+        public static void TestBTreeCreate()
+        {
+            BTreeNode firstRoot = null;
+            new BTreeCreator().PreOrderCreate(out firstRoot);
+            
+            Console.WriteLine("## PreOrderTraverse");
+            new BTreeTraverse().PreOrder(firstRoot);
+        }
+
+
+
         public static void TestPreOrderTraverse()
         {
             BTreeNode root = new BTreeNode();
