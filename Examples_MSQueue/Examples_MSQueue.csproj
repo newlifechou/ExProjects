@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{567221E1-B255-4A24-8EDC-6C95E77A9944}</ProjectGuid>
+    <ProjectGuid>{1182D8BB-F28F-48B2-853C-00E80F98EEB9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Examples_ClassicAlgorithm</RootNamespace>
-    <AssemblyName>Examples_ClassicAlgorithm</AssemblyName>
+    <RootNamespace>Examples_MSQueue</RootNamespace>
+    <AssemblyName>Examples_MSQueue</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,18 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlgorithmHelper.cs" />
-    <Compile Include="Classic\Recursion.cs" />
-    <Compile Include="Classic\SortAlgorithm.cs" />
-    <Compile Include="DataStructure\Tree\BTreeCreator.cs" />
-    <Compile Include="DataStructure\Tree\BTreeNode.cs" />
-    <Compile Include="DataStructure\Tree\BTreeTraverse.cs" />
-    <Compile Include="DataStructure\Tree\BTreeWithClueCreator.cs" />
-    <Compile Include="DataStructure\Tree\TreeNode.cs" />
-    <Compile Include="DataStructure\Tree\BTreeNodeWithClue.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="..\..\..\..\Downloads\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TEST\TestBTree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,9 +1,9 @@
-﻿using Examples_ClassicAlgorithm.Others;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Examples_ClassicAlgorithm.TEST;
 
 namespace Examples_ClassicAlgorithm
 {
@@ -11,10 +11,7 @@ namespace Examples_ClassicAlgorithm
     {
         static void Main(string[] args)
         {
-            Special s = new Special();
-            int data = 1000;
-            s.HailStone(data);
-            Console.WriteLine("算法结束");
+            TestBTree.TestBTreeCreate() ;
 
             Console.Read();
         }
