@@ -45,6 +45,8 @@
     <Compile Include="AlgorithmHelper.cs" />
     <Compile Include="Classic\Recursion.cs" />
     <Compile Include="Classic\SortAlgorithm.cs" />
+    <Compile Include="DataStructure\LInkedList\LinkedList.cs" />
+    <Compile Include="DataStructure\LInkedList\Node.cs" />
     <Compile Include="DataStructure\Tree\BTreeCreator.cs" />
     <Compile Include="DataStructure\Tree\BTreeNode.cs" />
     <Compile Include="DataStructure\Tree\BTreeTraverse.cs" />
@@ -57,6 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataStructure\Array\" />
+    <Folder Include="DataStructure\Graph\" />
+    <Folder Include="DataStructure\String\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
