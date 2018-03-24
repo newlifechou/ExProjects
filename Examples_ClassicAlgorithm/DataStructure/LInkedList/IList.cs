@@ -8,6 +8,12 @@ namespace Examples_ClassicAlgorithm.DataStructure.LInkedList
 {
     public interface IList
     {
+        /// <summary>
+        /// initialize n elements
+        /// </summary>
+        /// <param name="n"></param>
+        void Initialize(int n);
+
         bool IsEmpty();
 
         void Append(string data);

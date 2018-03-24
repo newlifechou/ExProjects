@@ -11,10 +11,34 @@ namespace Examples_ClassicAlgorithm.DataStructure.LInkedList
     /// </summary>
     public class ListLinkedOneWay : IList
     {
+        //head node, no data inside,its next node is the first node
         private Node head;
         public ListLinkedOneWay()
         {
             head = new Node();
+        }
+
+        public void Initialize(int n)
+        {
+            //append new node
+            Node pointer = new Node();
+            pointer = head;
+            for (int i = 0; i < n; i++)
+            {
+                Node newNode = new Node("");
+                pointer.next = newNode;
+                pointer = pointer.next;
+            }
+        }
+
+        public void InitializeAfterHead(int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                Node newNode = new Node("");
+                newNode.next = head.next;
+                head.next = newNode;
+            }
         }
 
         public void Append(string data)
@@ -125,8 +149,7 @@ namespace Examples_ClassicAlgorithm.DataStructure.LInkedList
             }
             else
             {
-                //append
-                pointer.next = newNode;
+                throw new IndexOutOfRangeException();
             }
 
         }
@@ -162,7 +185,27 @@ namespace Examples_ClassicAlgorithm.DataStructure.LInkedList
 
         public void RemoveAt(int index)
         {
-            throw new NotImplementedException();
+            if (head.next == null)
+                return;
+
+            //sibling pointers
+            Node pointer1 = new Node();
+            Node pointer2 = new Node();
+            pointer1 = head;
+            pointer2 = head.next;
+            int count = 0;
+            while (pointer2.next != null)
+            {
+                //find the location
+                if (count==index)
+                {
+                    pointer1.next = pointer2.next;
+                    break;
+                }
+                pointer1 = pointer1.next;
+                pointer2 = pointer2.next;
+                count++;
+            }
         }
     }
 }

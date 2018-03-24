@@ -32,6 +32,17 @@ namespace Examples_ClassicAlgorithm.DataStructure.LInkedList
             StoredData = new string[maxSize];
         }
 
+        public void Initialize(int n)
+        {
+            if (n <= maxSize)
+            {
+                listLength = n;
+                for (int i = 0; i < listLength; i++)
+                {
+                    StoredData[i] = "";
+                }
+            }
+        }
 
         public void Append(string data)
         {
