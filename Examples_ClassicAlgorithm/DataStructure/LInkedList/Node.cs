@@ -15,22 +15,22 @@ namespace Examples_ClassicAlgorithm.DataStructure.LInkedList
         }
         public Node(string data)
         {
-            Data = data;
+            this.data = data;
         }
         public Node(string data,Node next)
         {
-            Data = data;
-            Next = next;
+            this.data = data;
+            this.next = next;
         }
         public Node(string data,Node prev,Node next)
         {
-            Data = data;
-            Prev = prev;
-            Next = next;
+            this.data = data;
+            this.prev = prev;
+            this.next = next;
         }
 
-        public string Data;
-        public Node Prev;
-        public Node Next;
+        public string data;
+        public Node prev;
+        public Node next;
     }
 }
