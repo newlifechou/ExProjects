@@ -33,7 +33,7 @@ namespace Examples_ClassicAlgorithm.DataStructure.LInkedList
         }
 
 
-        public void Add(string data)
+        public void Append(string data)
         {
             //consider if the maxSize is out of range.
             if (listLength < maxSize)

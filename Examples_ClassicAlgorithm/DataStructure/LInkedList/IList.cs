@@ -10,7 +10,7 @@ namespace Examples_ClassicAlgorithm.DataStructure.LInkedList
     {
         bool IsEmpty();
 
-        void Add(string data);
+        void Append(string data);
         /// <summary>
         /// 插入
         /// </summary>

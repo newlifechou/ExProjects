@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Examples_ClassicAlgorithm.DataStructure.LInkedList
 {
-    class ListTwoWay
+    class ListLinkedTwoWay
     {
     }
 }

@@ -9,12 +9,12 @@ namespace Examples_ClassicAlgorithm.DataStructure.LInkedList
     /// <summary>
     /// 两个线性表的操作
     /// </summary>
-    class TwoList
+    class ListOperation
     {
         //两个线性表La,Lb的操作
         ListArray La, Lb;
 
-        public TwoList(ListArray a, ListArray b)
+        public ListOperation(ListArray a, ListArray b)
         {
             La = a;
             Lb = b;
@@ -29,7 +29,7 @@ namespace Examples_ClassicAlgorithm.DataStructure.LInkedList
                 //if not in La,add to La
                 if (La.IndexOf(dataB) == -1)
                 {
-                    La.Add(dataB);
+                    La.Append(dataB);
                 }
             }
         }
@@ -39,7 +39,7 @@ namespace Examples_ClassicAlgorithm.DataStructure.LInkedList
         {
             for (int i = 0; i < Lb.GetLength(); i++)
             {
-                La.Add(Lb.GetData(i));
+                La.Append(Lb.GetData(i));
             }
         }
 
@@ -52,7 +52,7 @@ namespace Examples_ClassicAlgorithm.DataStructure.LInkedList
                 string current = La.GetData(i);
                 if (Lb.IndexOf(current) != -1)
                 {
-                    Lc.Add(current);
+                    Lc.Append(current);
                 }
             }
             return Lc;
@@ -79,34 +79,54 @@ namespace Examples_ClassicAlgorithm.DataStructure.LInkedList
                 //If currentA is smaller
                 if (string.Compare(currentA, currentB) < 0)
                 {
-                    Lc.Add(currentA);
+                    Lc.Append(currentA);
                     indexA++;
                 }
                 else
                 {
-                    Lc.Add(currentB);
+                    Lc.Append(currentB);
                     indexB++;
                 }
             }
 
-            if (indexA==lengthA)
+            if (indexA == lengthA)
             {
                 for (int i = indexB; i < lengthB; i++)
                 {
-                    Lc.Add(Lb.GetData(i));
+                    Lc.Append(Lb.GetData(i));
                 }
             }
 
-            if(indexB==lengthB)
+            if (indexB == lengthB)
             {
                 for (int i = indexA; i < lengthA; i++)
                 {
-                    Lc.Add(La.GetData(i));
+                    Lc.Append(La.GetData(i));
                 }
             }
 
             return Lc;
         }
+
+
+        public ListArray Distinct()
+        {
+            ListArray lc = new ListArray();
+            for (int i = 0; i < La.GetLength(); i++)
+            {
+                string current = La.GetData(i);
+                //not in lc
+                if (lc.IndexOf(current) == -1)
+                {
+                    lc.Append(current);
+                }
+            }
+            return lc;
+        }
+
+
+
+
 
     }
 }

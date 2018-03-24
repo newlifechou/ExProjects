@@ -47,10 +47,10 @@
     <Compile Include="Classic\SortAlgorithm.cs" />
     <Compile Include="DataStructure\LInkedList\IList.cs" />
     <Compile Include="DataStructure\LInkedList\ListArray.cs" />
-    <Compile Include="DataStructure\LInkedList\ListOneWay.cs" />
+    <Compile Include="DataStructure\LInkedList\ListLinkedOneWay.cs" />
     <Compile Include="DataStructure\LInkedList\Node.cs" />
-    <Compile Include="DataStructure\LInkedList\TwoList.cs" />
-    <Compile Include="DataStructure\LInkedList\ListTwoWay.cs" />
+    <Compile Include="DataStructure\LInkedList\ListOperation.cs" />
+    <Compile Include="DataStructure\LInkedList\ListLinkedTwoWay.cs" />
     <Compile Include="DataStructure\Tree\BTreeCreator.cs" />
     <Compile Include="DataStructure\Tree\BTreeNode.cs" />
     <Compile Include="DataStructure\Tree\BTreeTraverse.cs" />
