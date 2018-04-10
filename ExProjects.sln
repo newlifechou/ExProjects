@@ -35,6 +35,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_MSQueue", "Example
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_MSQueueHelp", "Examples_MSQueueHelp\Examples_MSQueueHelp.csproj", "{1B23FFA0-579C-4DD2-A192-D2D2971E2BFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_MD5", "Examples_MD5\Examples_MD5.csproj", "{E9C29786-3A4D-4504-B629-AADDD55F5B34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_NPIO", "Examples_NPIO\Examples_NPIO.csproj", "{DCCDF1F9-EF30-41F1-B3ED-08D768715E9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +109,14 @@ Global
 		{1B23FFA0-579C-4DD2-A192-D2D2971E2BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B23FFA0-579C-4DD2-A192-D2D2971E2BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B23FFA0-579C-4DD2-A192-D2D2971E2BFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9C29786-3A4D-4504-B629-AADDD55F5B34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9C29786-3A4D-4504-B629-AADDD55F5B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9C29786-3A4D-4504-B629-AADDD55F5B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9C29786-3A4D-4504-B629-AADDD55F5B34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCCDF1F9-EF30-41F1-B3ED-08D768715E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCCDF1F9-EF30-41F1-B3ED-08D768715E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCCDF1F9-EF30-41F1-B3ED-08D768715E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCCDF1F9-EF30-41F1-B3ED-08D768715E9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

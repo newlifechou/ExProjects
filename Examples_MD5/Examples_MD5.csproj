@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{567221E1-B255-4A24-8EDC-6C95E77A9944}</ProjectGuid>
+    <ProjectGuid>{E9C29786-3A4D-4504-B629-AADDD55F5B34}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Examples_ClassicAlgorithm</RootNamespace>
-    <AssemblyName>Examples_ClassicAlgorithm</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>Examples_MD5</RootNamespace>
+    <AssemblyName>Examples_MD5</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -42,36 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlgorithmHelper.cs" />
-    <Compile Include="Classic\Recursion.cs" />
-    <Compile Include="Classic\SortAlgorithm.cs" />
-    <Compile Include="DataStructure\LInkedList\ListCircleOneWay.cs" />
-    <Compile Include="DataStructure\LInkedList\IListGeneric.cs" />
-    <Compile Include="DataStructure\LInkedList\IList.cs" />
-    <Compile Include="DataStructure\LInkedList\ListArray.cs" />
-    <Compile Include="DataStructure\LInkedList\ListLinkedOneWay.cs" />
-    <Compile Include="DataStructure\LInkedList\ListStatic.cs" />
-    <Compile Include="DataStructure\LInkedList\ListStaticNode.cs" />
-    <Compile Include="DataStructure\LInkedList\Node.cs" />
-    <Compile Include="DataStructure\LInkedList\ListOperation.cs" />
-    <Compile Include="DataStructure\LInkedList\ListLinkedTwoWay.cs" />
-    <Compile Include="DataStructure\Tree\BTreeCreator.cs" />
-    <Compile Include="DataStructure\Tree\BTreeNode.cs" />
-    <Compile Include="DataStructure\Tree\BTreeTraverse.cs" />
-    <Compile Include="DataStructure\Tree\BTreeWithClueCreator.cs" />
-    <Compile Include="DataStructure\Tree\TreeNode.cs" />
-    <Compile Include="DataStructure\Tree\BTreeNodeWithClue.cs" />
+    <Compile Include="MD5Operation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TEST\TestBTree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataStructure\Array\" />
-    <Folder Include="DataStructure\Graph\" />
-    <Folder Include="DataStructure\String\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
