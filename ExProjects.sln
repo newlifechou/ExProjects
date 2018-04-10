@@ -37,7 +37,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_MSQueueHelp", "Exa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_MD5", "Examples_MD5\Examples_MD5.csproj", "{E9C29786-3A4D-4504-B629-AADDD55F5B34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_NPIO", "Examples_NPIO\Examples_NPIO.csproj", "{DCCDF1F9-EF30-41F1-B3ED-08D768715E9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_NPOI", "Examples_NPOI\Examples_NPOI.csproj", "{DCCDF1F9-EF30-41F1-B3ED-08D768715E9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Examples_NPIO
+namespace Examples_NPOI
 {
     class Program
     {
         static void Main(string[] args)
         {
+
+            new WordSample().WriteNew();
         }
     }
 }
