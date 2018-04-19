@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_MD5", "Examples_MD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_NPOI", "Examples_NPOI\Examples_NPOI.csproj", "{DCCDF1F9-EF30-41F1-B3ED-08D768715E9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_WebCrawler", "Examples_WebCrawler\Examples_WebCrawler.csproj", "{97BBA731-4FFA-47B0-A835-C282EED1E788}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{DCCDF1F9-EF30-41F1-B3ED-08D768715E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCCDF1F9-EF30-41F1-B3ED-08D768715E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCCDF1F9-EF30-41F1-B3ED-08D768715E9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97BBA731-4FFA-47B0-A835-C282EED1E788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97BBA731-4FFA-47B0-A835-C282EED1E788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97BBA731-4FFA-47B0-A835-C282EED1E788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97BBA731-4FFA-47B0-A835-C282EED1E788}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

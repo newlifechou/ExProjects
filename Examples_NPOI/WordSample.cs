@@ -16,8 +16,10 @@ namespace Examples_NPOI
 
             XWPFParagraph p = doc.CreateParagraph();
             p.Alignment = ParagraphAlignment.CENTER;
-            XWPFRun run = p.CreateRun();
+            XWPFRun run =p.CreateRun();
             run.SetText("the brown fox");
+
+
             FileStream sw = File.Create("fuck.docx");
             doc.Write(sw);
             sw.Close();
