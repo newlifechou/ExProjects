@@ -10,6 +10,10 @@ namespace Examples_WebCrawler
 {
     public static class WebOperation
     {
+        /// <summary>
+        /// 使用WebRequest
+        /// 同步方式
+        /// </summary>
         public static void UseWebRequest()
         {
             string url = @"http://www.cd-pmi.com";
@@ -21,5 +25,19 @@ namespace Examples_WebCrawler
             string content = sr.ReadToEnd();
             Console.WriteLine(content);
         }
+
+        public async static void UseWebReqeustAsync()
+        {
+            string url = @"http://www.cd-pmi.com";
+            WebRequest request = WebRequest.Create(url);
+            var task = await request.GetResponseAsync();
+            WebResponse response = task;
+            Stream dataStream = response.GetResponseStream();
+            StreamReader sr = new StreamReader(dataStream, Encoding.UTF8);
+
+            string content =await sr.ReadToEndAsync();
+            Console.WriteLine(content);
+        }
+
     }
 }
