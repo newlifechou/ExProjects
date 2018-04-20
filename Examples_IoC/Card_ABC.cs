@@ -9,6 +9,10 @@ namespace Examples_IoC
     class Card_ABC : ICard
     {
         private string bank_name = "ABC";
+        public Card_ABC()
+        {
+
+        }
         public void Diposite(double money)
         {
             Console.WriteLine($"deposite {money} in {bank_name}");

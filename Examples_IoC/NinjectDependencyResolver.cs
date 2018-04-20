@@ -25,7 +25,7 @@ namespace Examples_IoC
         private NinjectDependencyResolver()
         {
             kernel = new StandardKernel();
-            kernel.Bind<ICard>().To<Card_ABC>();
+            kernel.Bind<ICard>().To<Card_ICBC>();
         }
 
         public T Resolve<T>()where T:class

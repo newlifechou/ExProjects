@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ninject.Modules;
 
 namespace Examples_IoC
 {
-    class Program
+    class FuckModule:NinjectModule
     {
-        static void Main(string[] args)
+        public override void Load()
         {
-            //Tester.Test_UnionPay();
-            Tester.Test_FuckerPay();
-            Console.Read();
+            Bind<ICard>().To<Card_ICBC>();
+            Bind<FuckPay>().ToSelf();
         }
     }
 }
