@@ -10,7 +10,10 @@ namespace Examples_WebCrawler
     {
         static void Main(string[] args)
         {
-            WebOperation.UseWebReqeustAsync();
+            //WebCrawlerOperation.UseWebClient();
+            //HtmlHelperOperation.ResolveWebsite();
+            Task task = Task.Factory.StartNew(WallpaperDownloader.Download);
+
 
             Console.WriteLine("主线程任务继续执行");
             Console.Read();
