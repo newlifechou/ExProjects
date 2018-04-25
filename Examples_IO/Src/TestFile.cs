@@ -33,5 +33,17 @@ namespace Examples_IO.Src
             //File.Encrypt("fileappend.txt");
             Console.WriteLine("加密文件完成");
         }
+
+        public void Read()
+        {
+            byte[] data = File.ReadAllBytes("data.dat");
+            string content = File.ReadAllText("data.txt");
+            string[] lines = File.ReadAllLines("log.txt");
+
+            StreamReader sr = File.OpenText("data.txt");
+            FileStream fs = File.Open("fuck.txt",FileMode.Open);
+
+        }
+
     }
 }

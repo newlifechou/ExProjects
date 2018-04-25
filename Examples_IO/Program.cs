@@ -23,10 +23,10 @@ namespace Examples_IO
             //TestZip test = new TestZip();
             //test.TestGzip();
 
-            TestSharpZipLib test = new TestSharpZipLib();
-            test.TestZipOutputStream();
+            //TestSharpZipLib test = new TestSharpZipLib();
+            //test.TestZipOutputStream();
 
-
+            MemoryStreamOperation.ReadWrite();
 
             Console.Read();
         }
