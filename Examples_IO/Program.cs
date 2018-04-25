@@ -26,7 +26,12 @@ namespace Examples_IO
             //TestSharpZipLib test = new TestSharpZipLib();
             //test.TestZipOutputStream();
 
-            MemoryStreamOperation.ReadWrite();
+            //MemoryStreamOperation.ReadWrite();
+
+            //StringReaderWriter.Do();
+
+            new FileWatch().Watch();
+
 
             Console.Read();
         }

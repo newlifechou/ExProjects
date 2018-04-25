@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Examples_Serialization
+namespace Examples_Collections
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            new XmlOperation().Single();
+            foreach (var item in new DataCollection())
+            {
+                Console.WriteLine(item);
+            }
 
             Console.Read();
         }

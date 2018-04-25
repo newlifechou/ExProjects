@@ -28,17 +28,24 @@ namespace Examples_Serialization
         public void Single()
         {
             MemoryStream ms = new MemoryStream();
-            StreamWriter writer = new StreamWriter(ms);
-            XmlSerializer serializer = new XmlSerializer(typeof(Passport));
-            serializer.Serialize(writer, single);
-            byte[] bytes = ms.ToArray();
+            StreamWriter writer = new StreamWriter(ms,Encoding.UTF8);
 
-            string xml_text = Encoding.UTF8.GetString(bytes);
-            Console.WriteLine(xml_text);
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add("", "");
+            XmlSerializer serializer = new XmlSerializer(typeof(Passport));
+            serializer.Serialize(writer, single,ns);
+            serializer.Serialize(Console.Out, single, ns);
+
+            //string xml_text = Encoding.Default.GetString(ms.ToArray());
+            //Console.WriteLine(xml_text);
+
+            //移动游标很重要
+            ms.Seek(0, SeekOrigin.Begin);
 
             Passport p = (Passport)serializer.Deserialize(new XmlTextReader(ms));
 
             Console.WriteLine(p.Name);
+            Console.WriteLine("Job Done");
         }
 
 
