@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
-
+using System.Runtime.Serialization.Formatters.Soap;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Examples_Serialization
 {
@@ -25,19 +26,16 @@ namespace Examples_Serialization
             };
         }
 
-        public void Single()
+        public void SingleXml()
         {
             MemoryStream ms = new MemoryStream();
-            StreamWriter writer = new StreamWriter(ms,Encoding.UTF8);
 
-            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-            ns.Add("", "");
             XmlSerializer serializer = new XmlSerializer(typeof(Passport));
-            serializer.Serialize(writer, single,ns);
-            serializer.Serialize(Console.Out, single, ns);
+            serializer.Serialize(ms, single);
+            serializer.Serialize(Console.Out, single);
 
-            //string xml_text = Encoding.Default.GetString(ms.ToArray());
-            //Console.WriteLine(xml_text);
+            string xml_text = Encoding.Default.GetString(ms.ToArray());
+            Console.WriteLine(xml_text);
 
             //移动游标很重要
             ms.Seek(0, SeekOrigin.Begin);
@@ -48,8 +46,43 @@ namespace Examples_Serialization
             Console.WriteLine("Job Done");
         }
 
+        /// <summary>
+        /// Product类必须标记Serializable
+        /// </summary>
 
+        public void SingleSoap()
+        {
+            //构建一个字符串写入器模拟写入流对象
+            MemoryStream ms = new MemoryStream();
+            SoapFormatter soap = new SoapFormatter();
+            soap.Serialize(ms, single);
 
+            foreach (var item in ms.ToArray())
+            {
+                Console.Write((char)item);
+            }
 
+            ms.Seek(0, SeekOrigin.Begin);
+
+            Passport p = soap.Deserialize(ms) as Passport;
+            Console.WriteLine(p.Name);
+
+            Console.WriteLine("DeSerialization from Soap Done");
+
+        }
+
+        public void SingleBinary()
+        {
+            MemoryStream ms = new MemoryStream();
+            BinaryFormatter formatter = new BinaryFormatter();
+            formatter.Serialize(ms, single);
+            Console.WriteLine("Serialization to Binary Done");
+
+            ms.Seek(0, SeekOrigin.Begin);
+
+            Passport p = (Passport)formatter.Deserialize(ms);
+            Console.WriteLine(p.Name);
+            Console.WriteLine("DeSerialization from Binary Done");
+        }
     }
 }
