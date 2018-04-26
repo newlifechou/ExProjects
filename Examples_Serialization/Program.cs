@@ -13,11 +13,11 @@ namespace Examples_Serialization
             Console.ForegroundColor = ConsoleColor.Yellow;
             //new XmlOperation().SingleXml();
 
-            //JsonOperation.JSS();
+            //JsonOperation.NewtonJsonLinq();
 
-            //JsonOperation.DCJS();
+            NewtonJsonOperation.DeserializeNested();
 
-            JsonOperation.NewtonJsonLinq();
+
 
             Console.Read();
         }

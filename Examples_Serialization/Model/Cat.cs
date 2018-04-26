@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 namespace Examples_Serialization
 {
     [XmlRoot]
-    class Cat
+    public class Cat
     {
         [XmlElement]
         public string Name { get; set; }
