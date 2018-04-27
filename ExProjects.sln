@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_OAuth", "Examples_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_NPlot", "Examples_NPlot\Examples_NPlot.csproj", "{F5DAB069-4374-4E18-8ADE-15C5AE72CA99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_Log4net", "Examples_Log4net\Examples_Log4net.csproj", "{2F3F0321-7093-4C88-8F2E-1D7FD6B1C12C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -159,6 +161,10 @@ Global
 		{F5DAB069-4374-4E18-8ADE-15C5AE72CA99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5DAB069-4374-4E18-8ADE-15C5AE72CA99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5DAB069-4374-4E18-8ADE-15C5AE72CA99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F3F0321-7093-4C88-8F2E-1D7FD6B1C12C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F3F0321-7093-4C88-8F2E-1D7FD6B1C12C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F3F0321-7093-4C88-8F2E-1D7FD6B1C12C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F3F0321-7093-4C88-8F2E-1D7FD6B1C12C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
