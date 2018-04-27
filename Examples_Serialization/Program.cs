@@ -15,7 +15,7 @@ namespace Examples_Serialization
 
             //JsonOperation.NewtonJsonLinq();
 
-            NewtonJsonOperation.DeserializeNested();
+            NewtonJsonOperation.CreateJsonByLinq();
 
 
 

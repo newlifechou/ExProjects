@@ -54,12 +54,6 @@
     <Compile Include="GroupOneTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\InterViewStuff\InterViewStuff.csproj">
-      <Project>{180B8654-F218-4DA4-AB1E-7A0945A4A4F9}</Project>
-      <Name>InterViewStuff</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

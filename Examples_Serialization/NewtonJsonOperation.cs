@@ -78,13 +78,97 @@ namespace Examples_Serialization
             Console.WriteLine(person.Age);
         }
 
+        /// <summary>
+        /// 使用linq to json
+        /// </summary>
+        public static void JsonLinq()
+        {
+            string json = File.ReadAllText("book.json");
+            var obj = JObject.Parse(json);
+            string title = (string)obj["title"];
+            Console.WriteLine(title);
+            string author1 = (string)obj["author"][0];
+            Console.WriteLine(author1);
+
+            var tags = obj["tags"].Select(r => (string)r["title"]).ToList();
+            foreach (var item in tags)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        public static void LoadFromJsonFile()
+        {
+            string file = "book.json";
+            using (var reader = File.OpenText(file))
+            {
+                JObject o = (JObject)JToken.ReadFrom(new JsonTextReader(reader));
+                string title = (string)o["title"];
+                Console.WriteLine(title);
+            }
+        }
+
+        /// <summary>
+        /// Manually creating json
+        /// </summary>
+        public static void CreateJsonByHand()
+        {
+            JArray array = new JArray();
+            JValue text = new JValue("Jack Paul");
+            JValue date = new JValue(new DateTime(2018, 5, 23));
+            array.Add(text);
+            array.Add(date);
+            string json = array.ToString();
+            Console.WriteLine(json);
+        }
 
 
+        public static void CreateJsonByLinq()
+        {
+            List<Cat> cats = new List<Cat>();
+            cats.Add(new Cat { Name = "ketty1", Age = 2 });
+            cats.Add(new Cat { Name = "ketty2", Age = 2 });
+            cats.Add(new Cat { Name = "ketty3", Age = 2 });
+            cats.Add(new Cat { Name = "ketty4", Age = 2 });
+            JObject rss = new JObject(
+                    new JProperty("name", "jack"),
+                    new JProperty("age", 20),
+                    new JProperty("books",
+                        new JArray(
+                            from c in cats
+                            orderby c.Name
+                            select new JObject(
+                                new JProperty("name", c.Name),
+                                new JProperty("age", c.Age)))));
 
+            Console.WriteLine(rss);
+        }
 
+        public static void CreateJsonFromObj()
+        {
+            List<Cat> cats = new List<Cat>();
+            cats.Add(new Cat { Name = "ketty1", Age = 2 });
+            cats.Add(new Cat { Name = "ketty2", Age = 2 });
+            cats.Add(new Cat { Name = "ketty3", Age = 2 });
+            cats.Add(new Cat { Name = "ketty4", Age = 2 });
 
+            JObject o = JObject.FromObject(new
+            {
+                cats = new
+                {
+                    title = "jack",
+                    link = "http://www.douban.com",
+                    item = from c in cats
+                           select new
+                           {
+                               name = c.Name,
+                               age = c.Age
+                           }
+                }
+            });
 
-
+            Console.WriteLine(o.ToString());
+        }
 
 
     }

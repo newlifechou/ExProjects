@@ -12,7 +12,9 @@ namespace Examples_WebCrawler
         {
             //WebCrawlerOperation.UseWebClient();
             //HtmlHelperOperation.ResolveWebsite();
-            Task task = Task.Factory.StartNew(WallpaperDownloader.Download);
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Task task = Task.Factory.StartNew(WebApiOperation.GetWeather);
 
 
             Console.WriteLine("主线程任务继续执行");
