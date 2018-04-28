@@ -4,19 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Examples_Sqlite
+namespace Examples_NLog
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var sql = new SqliteOperation();
-            sql.Connect();
-            sql.DeleteAll();
-            sql.Insert();
-
-
-
+            //先然Nlog比log4net更好用一些
+            NlogOperation.Log("something is wrong");
 
             Console.Read();
         }
