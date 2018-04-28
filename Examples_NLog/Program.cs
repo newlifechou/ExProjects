@@ -11,7 +11,7 @@ namespace Examples_NLog
         static void Main(string[] args)
         {
             //先然Nlog比log4net更好用一些
-            NlogOperation.Log("something is wrong");
+            NlogOperation.LogByConfigMannully("something is wrong");
 
             Console.Read();
         }

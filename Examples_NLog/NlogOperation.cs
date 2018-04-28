@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NLog;
+using NLog.Config;
+using NLog.Targets;
 
 namespace Examples_NLog
 {
@@ -25,17 +27,36 @@ namespace Examples_NLog
     /// </summary>
     static class NlogOperation
     {
-        public static void ConfigMannully()
+        public static void LogByConfigMannully(string msg)
         {
-            var config = new NLog.Config.LoggingConfiguration();
+            //create a config
+            var config = new LoggingConfiguration();
+            //create console target
+            var consoleTarget = new ColoredConsoleTarget();
+            config.AddTarget("console", consoleTarget);
 
-            var logfile = new NLog.Targets.FileTarget() { FileName = "log.txt", Name = "logfile" };
-            config.LoggingRules.Add(new NLog.Config.LoggingRule("*", LogLevel.Error, logfile));
+            var fileTarget = new FileTarget("mylog.txt");
+            fileTarget.FileName = "file.txt";
+            config.AddTarget("logfile", fileTarget);
 
-            NLog.LogManager.Configuration = config;
+            //define rules
+            var rule1 = new LoggingRule("*", LogLevel.Debug, consoleTarget);
+            config.LoggingRules.Add(rule1);
+
+            var rule2 = new LoggingRule("*", LogLevel.Debug, fileTarget);
+            config.LoggingRules.Add(rule2);
+
+
+            LogManager.Configuration = config;
+
+            var logger = LogManager.GetLogger("NlogOperation");
+            for (int i = 0; i < 100; i++)
+            {
+                logger.Debug(msg);
+            }
         }
 
-        public static void Log(string msg)
+        public static void LogByConfig(string msg)
         {
             var logger = NLog.LogManager.GetCurrentClassLogger();
             logger.Error(msg);
