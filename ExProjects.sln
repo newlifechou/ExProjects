@@ -81,6 +81,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_NLog", "Examples_N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_Timers", "Examples_Timers\Examples_Timers.csproj", "{860EC73C-F036-4807-A0B3-5B946849BD88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples_InterViewStuff", "InterViewStuff\Examples_InterViewStuff.csproj", "{180B8654-F218-4DA4-AB1E-7A0945A4A4F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -235,6 +237,10 @@ Global
 		{860EC73C-F036-4807-A0B3-5B946849BD88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{860EC73C-F036-4807-A0B3-5B946849BD88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{860EC73C-F036-4807-A0B3-5B946849BD88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{180B8654-F218-4DA4-AB1E-7A0945A4A4F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{180B8654-F218-4DA4-AB1E-7A0945A4A4F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{180B8654-F218-4DA4-AB1E-7A0945A4A4F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{180B8654-F218-4DA4-AB1E-7A0945A4A4F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -277,6 +283,7 @@ Global
 		{5001C4AF-9FA5-4888-8A7D-A0881F21717D} = {1196D6D9-DFC7-42A3-B76C-DF1D77BE8228}
 		{D78A7C1A-9287-4532-8488-0017E55A9CC3} = {1196D6D9-DFC7-42A3-B76C-DF1D77BE8228}
 		{860EC73C-F036-4807-A0B3-5B946849BD88} = {A2F113C8-9C81-4A5A-B2A9-8A57053DCDC6}
+		{180B8654-F218-4DA4-AB1E-7A0945A4A4F9} = {A2F113C8-9C81-4A5A-B2A9-8A57053DCDC6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {611D7667-3FA6-4D4A-8C94-0966DA74DCDF}

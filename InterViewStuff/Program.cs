@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace InterViewStuff
@@ -10,9 +11,11 @@ namespace InterViewStuff
     {
         static void Main(string[] args)
         {
-            Interview01 t = new Interview01();
-            t.Test01();
-
+            for (int i = 0; i < 20; i++)
+            {
+                InterviewOperation.RandomValidationCode(5);
+                Thread.Sleep(100);
+            }
             Console.Read();
         }
     }

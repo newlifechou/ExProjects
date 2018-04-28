@@ -10,12 +10,15 @@ namespace Examples_Sqlite
     {
         static void Main(string[] args)
         {
-            var sql = new SqliteOperation();
-            sql.Connect();
-            sql.DeleteAll();
-            sql.Insert();
+            //var sql = new SqliteOperation();
+            //sql.Connect();
+            //sql.DeleteAll();
+            //sql.Insert();
 
-
+            for (int i = 0; i < 100; i++)
+            {
+                EFOperation.Insert("Person "+i);
+            }
 
 
             Console.Read();

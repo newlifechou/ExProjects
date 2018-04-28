@@ -10,6 +10,7 @@ using System.Diagnostics;
 namespace Examples_Sqlite
 {
     /// <summary>
+    /// sqlite 轻巧，不需要安装，效率还可以
     /// 使用System.Data.Sqlite
     /// 直接操作ADO.NET对象的方式
     /// </summary>
