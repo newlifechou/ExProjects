@@ -7,7 +7,7 @@ namespace Examples_EFCore
     {
         static void Main(string[] args)
         {
-            //EFCoreOperation.Post();
+            EFCoreOperation.Post();
             EFCoreOperation.Get();
             Console.WriteLine("main thread is running");
             Console.Read();
