@@ -16,7 +16,7 @@ namespace Examples_DocX
     {
         public static void Write()
         {
-            string path = "plaintext.docx";
+            //string path = "plaintext.docx";
 
 
 
