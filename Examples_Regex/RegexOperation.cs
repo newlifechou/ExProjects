@@ -18,7 +18,10 @@ namespace Examples_Regex
             }
         }
 
-
+        public static string Replace(string s,string p,string sp)
+        {
+            return Regex.Replace(s, p, sp,RegexOptions.IgnoreCase);
+        }
 
     }
 }
